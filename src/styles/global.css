@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Inter Variable", sans-serif;
+  font-feature-settings: "calt" 1;
+}
+
+.pain-point-card:nth-child(1) {
+  transform: rotate(2deg);
+}
+
+.pain-point-card {
+  @apply border;
+}
+
+.pain-point-card:nth-child(2n + 1) {
+  transform: rotate(-2deg);
+  @apply bg-red-600/10 text-red-600 border-red-200/75;
+}
+
+.pain-point-card:nth-of-type(2n) {
+  transform: rotate(2deg);
+  @apply bg-red-600/90 text-white;
+}
+
+.pain-point-card:nth-of-type(3n + 2) {
+  transform: rotate(1deg);
+}
+
+.pain-point-card:last-child {
+  transform: rotate(-1deg);
+}
