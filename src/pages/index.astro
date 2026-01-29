@@ -31,6 +31,8 @@ import {
   MessagesSquareIcon,
   Settings2Icon,
   WifiOffIcon,
+  XIcon,
+  MenuIcon,
 } from "@lucide/astro";
 
 const forWho = [
@@ -149,21 +151,62 @@ const faqs = [
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+   
   </head>
   <body class="bg-stone-100 text-stone-800 antialiased">
     <main class="max-w-7xl w-full mx-auto">
-      <header class="p-4 grid grid-cols-[128px_1fr_128px] items-center">
-        <Image src={logo} alt="Logo" class="w-32" width="128" height="26" />
-        <nav class="flex items-center gap-8 justify-center">
-          <a href="/" class="text-sm">Home</a>
-          <a href="/about" class="text-sm">About</a>
-          <a href="/contact" class="text-sm">Contact</a>
-        </nav>
-        <button
-          class="bg-stone-800 text-white w-fit px-3 py-1 rounded-full font-medium text-sm"
+      <header x-data="{ mobileOpen: false }" class="p-4">
+        <div class="flex items-center justify-between">
+          <Image src={logo} alt="Logo" class="w-32" width="128" height="26" />
+          <nav class="hidden md:flex items-center gap-8 justify-center">
+            <a href="/" class="text-sm">Home</a>
+            <a href="/about" class="text-sm">About</a>
+            <a href="/contact" class="text-sm">Contact</a>
+          </nav>
+          <div class="flex items-center gap-3">
+            <button
+              class="bg-stone-800 text-white w-fit px-3 py-1 rounded-full font-medium text-sm hidden md:inline-flex"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="md:hidden inline-flex items-center justify-center text-stone-700 w-9 h-9"
+              @click="mobileOpen = !mobileOpen"
+              :aria-expanded="mobileOpen"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation"
+            >
+             <MenuIcon class="size-5" />
+            </button>
+          </div>
+        </div>
+        <div
+          id="mobile-menu"
+          class="md:hidden fixed inset-0 z-50 bg-stone-100/95 backdrop-blur-sm p-6"
+          x-show="mobileOpen"
+          x-transition.opacity
+          @click.outside="mobileOpen = false"
         >
-          Login
-        </button>
+          <button
+            type="button"
+            class="absolute top-4 right-4 inline-flex items-center justify-center text-stone-700 w-9 h-9"
+            @click="mobileOpen = false"
+            aria-label="Close navigation"
+          >
+            <XIcon class="size-5" />
+          </button>
+          <nav class="grid gap-4 text-lg font-medium">
+            <a href="/" class="py-1">Home</a>
+            <a href="/about" class="py-1">About</a>
+            <a href="/contact" class="py-1">Contact</a>
+            <button
+              class="bg-stone-800 text-white w-fit px-4 py-2 rounded-full font-medium text-sm mt-2"
+            >
+              Login
+            </button>
+          </nav>
+        </div>
       </header>
 
       <section class="p-4 mt-24">
@@ -225,7 +268,7 @@ const faqs = [
         <h2 class="text-4xl font-medium tracking-tight text-center">
           Dla kogo jest TreeAgent?
         </h2>
-        <ul class="grid grid-cols-3 gap-4 mt-16">
+        <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-16">
           {
             forWho.map(({ title, description }) => (
               <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-8">
