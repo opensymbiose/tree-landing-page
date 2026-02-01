@@ -30,152 +30,201 @@ import {
   XIcon
 } from "@lucide/astro";
 
-const forWho = [
-  {
-    title: "Inspektorzy i arborzyści",
-    description: "Szybkie inspekcje drzew i pełna historia każdej pozycji.",
-    icon: UserRoundIcon,
-  },
-  {
-    title: "Jednostki samorządowe i zarządcy terenów",
-    description: "Łatwe raportowanie i zarządzanie zielenią miejską.",
-    icon: Building2Icon,
-  },
-  {
-    title: "Organizacje i instytucje dbające o zieleń",
-    description: "Uporządkowana dokumentacja i bieżąca kontrola stanu zieleni.",
-    icon: TreesIcon,
-  },
-];
+// ============================================================================
+// CONTENT / TEXTS
+// ============================================================================
 
-const painPoints = [
-  {
-    text: "Tracisz czas na powtarzające się inspekcje",
-    icon: ClockIcon,
-  },
-  {
-    text: "Zbyt skomplikowane systemy GIS",
-    icon: MapIcon,
-  },
-  {
-    text: "Dokumentacja jest rozproszona i trudna do raportowania",
-    icon: FileStackIcon,
-  },
-  {
-    text: "Brak historii drzew utrudnia decyzje projektowe i inwestycyjne",
-    icon: HistoryIcon,
-  },
-  // {
-  //   text: "Trudności w komunikacji między zespołami i urzędami",
-  //   icon: MessagesSquareIcon,
-  // },
-  {
-    text: "Brak logiki dopasowanej do branży",
-    icon: Settings2Icon,
-  },
-  // {
-  //   text: "Lokalizacja drzew, która komplikuje zamiast pomagać",
-  //   icon: MapPinnedIcon,
-  // },
-  // {
-  //   text: "Brak pewnego trybu offline",
-  //   icon: WifiOffIcon,
-  // },
-];
+const meta = {
+  title: "TreeAgent – Tree Inventory & Inspection System",
+};
 
-const faqs = [
-  {
-    question: "Co to jest TreeAgent?",
-    answer:
-      "TreeAgent to profesjonalna aplikacja do inspekcji drzew i inwentaryzacji zieleni, która pozwala zarządzać danymi, inspekcjami i raportami w jednym spójnym systemie. Narzędzie wspiera arborystów i specjalistów środowiskowych - od zarządzania klientami, przez pracę w terenie, aż po gotową dokumentację.",
-  },
-  {
-    question: "Dla kogo został zaprojektowany TreeAgent?",
-    answer:
-      "TreeAgent został stworzony z myślą o opiekunach drzew - arborystach, dendrologach, inspektorach drzew, architektach budowlanych i krajobrazu, konsultantach, urzędach i ich pracownikach. To także narzędzie dla całych organizacji zajmujących się zarządzaniem drzewami - zarówno w sektorze publicznym, jak i prywatnym. Sprawdzi się wszędzie tam, gdzie potrzebne jest uporządkowane oprogramowanie do inwentaryzacji i monitoringu drzew.",
-  },
-  {
-    question: "Czy muszę dodawać to samo drzewo przy każdej inspekcji?",
-    answer:
-      "Nie. Każde drzewo dodajesz do systemu tylko raz. Później wracasz do niego przy kolejnych inspekcjach, aktualizacjach lub długoterminowym monitoringu. Dzięki temu dane drzew są spójne, a historia inspekcji zachowana bez powielania informacji.",
-  },
-  {
-    question: "Czy mogę przerwać inspekcję i wrócić do niej później?",
-    answer:
-      "Tak. Inspekcje w TreeAgent możesz tworzyć stopniowo - zapisać je w trakcie i wrócić w dowolnym momencie. To szczególnie ważne w pracy terenowej, gdzie inspekcje drzew często rozciągają się na kilka wizyt.",
-  },
-  {
-    question: "Jak działa zarządzanie projektami w TreeAgent?",
-    answer:
-      "Projekty pozwalają grupować drzewa i inspekcje w jednym kontekście - np. według lokalizacji, klienta lub umowy. Dzięki temu zarządzanie inwentaryzacją drzew jest czytelne, a praca uporządkowana nawet przy dużej liczbie danych.",
-  },
-  {
-    question: "Czy TreeAgent nadaje się do pracy w terenie?",
-    answer:
-      "Zdecydowanie tak. TreeAgent został zaprojektowany wokół realnych scenariuszy pracy w terenie. Umożliwia elastyczne wprowadzanie danych, częściowe uzupełnianie inspekcji i płynne kontynuowanie pracy między kolejnymi wizytami na miejscu.",
-  },
-  {
-    question: "Czy mogę generować raporty bezpośrednio z inspekcji?",
-    answer:
-      "Tak. TreeAgent automatycznie przekształca dane z inspekcji w czytelne, profesjonalne raporty z inspekcji drzew, gotowe do przekazania klientowi lub interesariuszom - bez ręcznego składania dokumentów.",
-  },
-  {
-    question: "Co dzieje się z danymi, gdy tworzę nową inspekcję?",
-    answer:
-      "Wszystkie istniejące dane drzew pozostają nienaruszone. Nowa inspekcja bazuje na wcześniejszych zapisach, dzięki czemu zachowujesz ciągłość informacji i pełny kontekst historyczny, bez nadpisywania wcześniejszych ocen.",
-  },
-  {
-    question: "Czy TreeAgent nadaje się do długoterminowego monitoringu drzew?",
-    answer:
-      "Tak. TreeAgent został zaprojektowany jako narzędzie do długoterminowego monitoringu drzew, umożliwiające śledzenie zmian, ryzyk i zaleceń w czasie - od pierwszej inspekcji po kolejne lata obserwacji.",
-  },
-  {
-    question:
-      "Czy do korzystania z TreeAgent potrzebna jest zaawansowana wiedza technologiczna?",
-    answer:
-      "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
-  },
-];
+const nav = {
+  home: "Home",
+  about: "About",
+  contact: "Contact",
+  login: "Login",
+};
 
-const features = [{
-  microcopy: "Jedno miejsce zamiast rozproszonych informacji",
-  title: "Klienci - jasno i bez chaosu",
-  description: "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
-  mobileImage: clientsMobile,
-  image: clients,
-},
-{
-  microcopy: "Porządek dopasowany do przebiegu prac",
-  title: "Projekty, które odzwierciedlają realną pracę.",
-  description: "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
-  mobileImage: projectsMobile,
-  image: projects,
-},
-{
-  microcopy: "Te same obiekty, kolejne działania",
-  title: "Drzewa dodajesz raz. Potem tylko pracujesz.",
-  description: "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
-  mobileImage: treesMobile,
-  image: trees,
-},
-{
-  microcopy: "Przestrzeń zamiast listy punktów",
-  title: "Mapa, która naprawdę pomaga.",
-  description: "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
-  mobileImage: mapMobile,
-  image: map,
-}]
+const heroSection = {
+  microcopy: "Made for modern professionals",
+  title: "A simple system for managing tree inspections.",
+  description: "Inspect, track, and maintain trees in one intelligent system that supports real field work and long-term decisions.",
+  cta: "Poznaj TreeAgent",
+};
 
-const upcomingFeatures = [
-  {
-    text: "Raporty gotowe do przekazania klientowi",
-    icon: FileStackIcon,
-  },
-  {
-    text: "Mapa 3D",
-    icon: MapIcon,
-  },
-]
+const forWhoSection = {
+  title: "Dla kogo jest TreeAgent?",
+  items: [
+    {
+      title: "Inspektorzy i arborzyści",
+      description: "Szybkie inspekcje drzew i pełna historia każdej pozycji.",
+      icon: UserRoundIcon,
+    },
+    {
+      title: "Jednostki samorządowe i zarządcy terenów",
+      description: "Łatwe raportowanie i zarządzanie zielenią miejską.",
+      icon: Building2Icon,
+    },
+    {
+      title: "Organizacje i instytucje dbające o zieleń",
+      description: "Uporządkowana dokumentacja i bieżąca kontrola stanu zieleni.",
+      icon: TreesIcon,
+    },
+  ],
+};
+
+const problemSection = {
+  microcopy: "Problem",
+  title: "Masz 5 narzędzi, 3 arkusze i dalej nie wiesz, co jest aktualne...",
+  items: [
+    {
+      text: "Tracisz czas na powtarzające się inspekcje",
+      icon: ClockIcon,
+    },
+    {
+      text: "Zbyt skomplikowane systemy GIS",
+      icon: MapIcon,
+    },
+    {
+      text: "Dokumentacja jest rozproszona i trudna do raportowania",
+      icon: FileStackIcon,
+    },
+    {
+      text: "Brak historii drzew utrudnia decyzje projektowe i inwestycyjne",
+      icon: HistoryIcon,
+    },
+    {
+      text: "Brak logiki dopasowanej do branży",
+      icon: Settings2Icon,
+    },
+  ],
+};
+
+const solutionSection = {
+  microcopy: "Rozwiązanie",
+  title: "Jak TreeAgent rozwiązuje te problemy?",
+  description: "TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.",
+  features: [
+    {
+      microcopy: "Jedno miejsce zamiast rozproszonych informacji",
+      title: "Klienci - jasno i bez chaosu",
+      description: "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
+      mobileImage: clientsMobile,
+      image: clients,
+    },
+    {
+      microcopy: "Porządek dopasowany do przebiegu prac",
+      title: "Projekty, które odzwierciedlają realną pracę.",
+      description: "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
+      mobileImage: projectsMobile,
+      image: projects,
+    },
+    {
+      microcopy: "Te same obiekty, kolejne działania",
+      title: "Drzewa dodajesz raz. Potem tylko pracujesz.",
+      description: "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
+      mobileImage: treesMobile,
+      image: trees,
+    },
+    {
+      microcopy: "Przestrzeń zamiast listy punktów",
+      title: "Mapa, która naprawdę pomaga.",
+      description: "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
+      mobileImage: mapMobile,
+      image: map,
+    },
+  ],
+};
+
+const upcomingSection = {
+  title: "Nad czym pracujemy teraz?",
+  description: "TreeAgent jest ciągle rozwijany i aktualizowany. Pracujemy nad nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.",
+  badge: "Soon",
+  items: [
+    {
+      text: "Raporty gotowe do przekazania klientowi",
+      icon: FileStackIcon,
+    },
+    {
+      text: "Mapa 3D",
+      icon: MapIcon,
+    },
+  ],
+};
+
+const newsletterSection = {
+  title: "Bądzmy w kontakcie!",
+  description: "TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.",
+  placeholder: "Email",
+  cta: "Zapisz się",
+  note: "Zero śmieci. Tylko rzeczy, które mają znaczenie.",
+  benefitsTitle: "Co dostaniesz?",
+  benefits: [
+    {
+      text: "Powiadomienia o nowiutkich funkcjach",
+      icon: BellRingIcon,
+    },
+    {
+      text: "Ważne poprawki i zmiany, które wpływają na Twoją pracę",
+      icon: BugOffIcon,
+    },
+    {
+      text: "Krótkie aktualizacje bez spamu i marketingowych epopei",
+      icon: CircleFadingArrowUpIcon,
+    },
+  ],
+};
+
+const faqSection = {
+  title: "FAQ",
+  description: "Najczęściej zadawane pytania o TreeAgent",
+  items: [
+    {
+      question: "Co to jest TreeAgent?",
+      answer: "TreeAgent to profesjonalna aplikacja do inspekcji drzew i inwentaryzacji zieleni, która pozwala zarządzać danymi, inspekcjami i raportami w jednym spójnym systemie. Narzędzie wspiera arborystów i specjalistów środowiskowych - od zarządzania klientami, przez pracę w terenie, aż po gotową dokumentację.",
+    },
+    {
+      question: "Dla kogo został zaprojektowany TreeAgent?",
+      answer: "TreeAgent został stworzony z myślą o opiekunach drzew - arborystach, dendrologach, inspektorach drzew, architektach budowlanych i krajobrazu, konsultantach, urzędach i ich pracownikach. To także narzędzie dla całych organizacji zajmujących się zarządzaniem drzewami - zarówno w sektorze publicznym, jak i prywatnym. Sprawdzi się wszędzie tam, gdzie potrzebne jest uporządkowane oprogramowanie do inwentaryzacji i monitoringu drzew.",
+    },
+    {
+      question: "Czy muszę dodawać to samo drzewo przy każdej inspekcji?",
+      answer: "Nie. Każde drzewo dodajesz do systemu tylko raz. Później wracasz do niego przy kolejnych inspekcjach, aktualizacjach lub długoterminowym monitoringu. Dzięki temu dane drzew są spójne, a historia inspekcji zachowana bez powielania informacji.",
+    },
+    {
+      question: "Czy mogę przerwać inspekcję i wrócić do niej później?",
+      answer: "Tak. Inspekcje w TreeAgent możesz tworzyć stopniowo - zapisać je w trakcie i wrócić w dowolnym momencie. To szczególnie ważne w pracy terenowej, gdzie inspekcje drzew często rozciągają się na kilka wizyt.",
+    },
+    {
+      question: "Jak działa zarządzanie projektami w TreeAgent?",
+      answer: "Projekty pozwalają grupować drzewa i inspekcje w jednym kontekście - np. według lokalizacji, klienta lub umowy. Dzięki temu zarządzanie inwentaryzacją drzew jest czytelne, a praca uporządkowana nawet przy dużej liczbie danych.",
+    },
+    {
+      question: "Czy TreeAgent nadaje się do pracy w terenie?",
+      answer: "Zdecydowanie tak. TreeAgent został zaprojektowany wokół realnych scenariuszy pracy w terenie. Umożliwia elastyczne wprowadzanie danych, częściowe uzupełnianie inspekcji i płynne kontynuowanie pracy między kolejnymi wizytami na miejscu.",
+    },
+    {
+      question: "Czy mogę generować raporty bezpośrednio z inspekcji?",
+      answer: "Tak. TreeAgent automatycznie przekształca dane z inspekcji w czytelne, profesjonalne raporty z inspekcji drzew, gotowe do przekazania klientowi lub interesariuszom - bez ręcznego składania dokumentów.",
+    },
+    {
+      question: "Co dzieje się z danymi, gdy tworzę nową inspekcję?",
+      answer: "Wszystkie istniejące dane drzew pozostają nienaruszone. Nowa inspekcja bazuje na wcześniejszych zapisach, dzięki czemu zachowujesz ciągłość informacji i pełny kontekst historyczny, bez nadpisywania wcześniejszych ocen.",
+    },
+    {
+      question: "Czy TreeAgent nadaje się do długoterminowego monitoringu drzew?",
+      answer: "Tak. TreeAgent został zaprojektowany jako narzędzie do długoterminowego monitoringu drzew, umożliwiające śledzenie zmian, ryzyk i zaleceń w czasie - od pierwszej inspekcji po kolejne lata obserwacji.",
+    },
+    {
+      question: "Czy do korzystania z TreeAgent potrzebna jest zaawansowana wiedza technologiczna?",
+      answer: "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
+    },
+  ],
+};
+
+const footer = {
+  brand: "TreeAgent",
+};
 ---
 
 <html lang="en">
@@ -185,8 +234,7 @@ const upcomingFeatures = [
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-   
+    <title>{meta.title}</title>
   </head>
   <body class="bg-stone-50 text-stone-800 antialiased">
     <main class="max-w-7xl w-full mx-auto">
@@ -194,15 +242,15 @@ const upcomingFeatures = [
         <div class="flex items-center justify-between">
           <Image src={logo} alt="Logo" class="w-32" width="128" height="26" />
           <nav class="hidden md:flex items-center gap-8 justify-center font-[450]">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="/">{nav.home}</a>
+            <a href="/about">{nav.about}</a>
+            <a href="/contact">{nav.contact}</a>
           </nav>
           <div class="flex items-center gap-3">
             <button
               class="bg-stone-200 text-stone-950 w-fit px-3 py-1 rounded-full font-medium hidden md:inline-flex"
             >
-              Login
+              {nav.login}
             </button>
             <button
               type="button"
@@ -232,13 +280,13 @@ const upcomingFeatures = [
             <XIcon class="size-5" />
           </button>
           <nav class="grid gap-4 text-lg font-medium">
-            <a href="/" class="py-1">Home</a>
-            <a href="/about" class="py-1">About</a>
-            <a href="/contact" class="py-1">Contact</a>
+            <a href="/" class="py-1">{nav.home}</a>
+            <a href="/about" class="py-1">{nav.about}</a>
+            <a href="/contact" class="py-1">{nav.contact}</a>
             <button
               class="bg-stone-800 text-white w-fit px-4 py-2 rounded-full font-medium text-sm mt-2"
             >
-              Login
+              {nav.login}
             </button>
           </nav>
         </div>
@@ -246,17 +294,17 @@ const upcomingFeatures = [
 
       <section class="px-6 md:px-10 mt-10 md:mt-24">
         <div>
-          <small class="text-orange-600 font-medium text-sm uppercase">Made for modern professionals</small>
+          <small class="text-orange-600 font-medium text-sm uppercase">{heroSection.microcopy}</small>
           <h1 class="text-3xl md:text-5xl md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-xl">
-            A simple system for managing tree inspections.
+            {heroSection.title}
           </h1>
           <p class="__tracking-tight font-[450] text-stone-600 text-lg max-w-lg md:text-balance mt-4">
-            Inspect, track, and maintain trees in one intelligent system that supports real field work and long-term decisions. 
+            {heroSection.description}
           </p>
           <button
             class="bg-stone-800 font-medium text-white w-fit px-5 py-2 rounded-full mt-5.5 flex items-center gap-1.5"
           >
-            <span>Poznaj TreeAgent</span>
+            <span>{heroSection.cta}</span>
             <ArrowDownIcon class="size-4" />
           </button>
         </div>
@@ -267,11 +315,11 @@ const upcomingFeatures = [
 
       <section class="p-4 mt-12 md:mt-32">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">
-          Dla kogo jest TreeAgent?
+          {forWhoSection.title}
         </h2>
         <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-12 md:mt-16">
           {
-            forWho.map(({ title, description }) => (
+            forWhoSection.items.map(({ title, description }) => (
               <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-4 bg-lines">
                 <div class="flex items-center gap-1">
                   <p class="font-medium text-xl leading-tight text-stone-950">{title}</p>
@@ -286,191 +334,149 @@ const upcomingFeatures = [
       </section>
 
       <section class="p-4 mt-12 md:mt-32">
-          <small class="text-red-600 font-medium text-sm text-center uppercase block">Problem</small>
+        <small class="text-red-600 font-medium text-sm text-center uppercase block">{problemSection.microcopy}</small>
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 max-w-xl mx-auto">
-          Masz 5 narzędzi, 3 arkusze i dalej nie wiesz, co jest aktualne...
+          {problemSection.title}
         </h2>
         <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
-          {painPoints.map(({ text, icon: Icon }) => (
-            <li
-            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600"
-          >
-            <span>
-              <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
-            </span>
-            <p class="font-[450] md:text-lg">
-              {text}
-            </p>
-          </li>
+          {problemSection.items.map(({ text, icon: Icon }) => (
+            <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600">
+              <span>
+                <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
+              </span>
+              <p class="font-[450] md:text-lg">
+                {text}
+              </p>
+            </li>
           ))}
         </ul>
       </section>
 
       <section class="p-4 mt-12 md:mt-32">
-          <small class="text-green-600 font-medium text-sm text-center uppercase block">Rozwiązanie</small>
+        <small class="text-green-600 font-medium text-sm text-center uppercase block">{solutionSection.microcopy}</small>
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 mx-auto">
-          Jak <span class="text-green-600">TreeAgent</span> rozwiązuje te problemy?
+          {solutionSection.title.split("TreeAgent")[0]}<span class="text-green-600">TreeAgent</span>{solutionSection.title.split("TreeAgent")[1]}
         </h2>
         <p
           class="tracking-tight text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
-          TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i
-          raportowania - stworzone z myślą o realnej pracy w terenie.
+          {solutionSection.description}
         </p>
 
-        <!-- <div class="mt-16 grid gap-12 hidden">
-          {features.map(({microcopy, title, description, image}) => (
-             <div
-            class="max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[2fr_3fr]"
-          >
-            <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12">
-          <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
-              <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
-                {title}
-              </p>
-              <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
-                {description}
-              </p>
-            </div>
- <Image
-                src={image}
-                alt={title}
-                class="w-full rounded-md"
-              />
-          </div>
-          ))}
-          </div> -->
-
         <div class="mt-16 grid gap-12">
-          {features.map(({microcopy, title, description, image, mobileImage}) => (
+          {solutionSection.features.map(({microcopy, title, description, image, mobileImage}) => (
             <div
-            class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]"
-          >
-            <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
-          <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
-              <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
-                {title}
-              </p>
-              <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
-                {description}
-              </p>
+              class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]"
+            >
+              <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
+                <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
+                <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
+                  {title}
+                </p>
+                <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
+                  {description}
+                </p>
+              </div>
+              <Image
+                src={image}
+                alt=""
+                class="rounded-lg max-sm:hidden"
+              />
+              <Image
+                src={mobileImage}
+                alt=""
+                class="rounded-lg sm:hidden"
+              />
             </div>
-
-          <Image
-                  src={image}
-                  alt=""
-                  class="rounded-lg max-sm:hidden"
-                />
-                <Image
-                  src={mobileImage}
-                  alt=""
-                  class="rounded-lg sm:hidden"
-                />
-          </div>
           ))}
         </div>
       </section>
 
       <section class="p-4 mt-12 md:mt-32">
-         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
-          Nad czym pracujemy teraz?
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
+          {upcomingSection.title}
         </h2>
         <p
           class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
-          TreeAgent jest ciągle rozwijany i aktualizowany. <br />Pracujemy nad
-          nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.
+          {upcomingSection.description}
         </p>
 
-
-         <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
-          {upcomingFeatures.map(({ text, icon: Icon }) => (
-             <li
-            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2"
-
-          >
-            <span>
-              <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
-            </span>
-            <p class="font-[450] md:text-lg">
-              {text}
-            </p>
-            <div
-              class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline"
-            >
-Soon
-            </div>
-          </li>
+        <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
+          {upcomingSection.items.map(({ text, icon: Icon }) => (
+            <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2">
+              <span>
+                <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
+              </span>
+              <p class="font-[450] md:text-lg">
+                {text}
+              </p>
+              <div
+                class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline"
+              >
+                {upcomingSection.badge}
+              </div>
+            </li>
           ))}
         </ul>
       </section>
 
       <section class="p-4 mt-16 bg-stone-400/10 rounded-lg py-16">
-           <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
-          Bądzmy w kontakcie!
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
+          {newsletterSection.title}
         </h2>
         <p
           class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
-          TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco -
-          dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy
-          funkcje, które w terenie muszą działać po prostu dobrze.
+          {newsletterSection.description}
         </p>
-
-        
 
         <div class="my-16">
           <div class="flex items-center gap-2 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Email"
+              placeholder={newsletterSection.placeholder}
               class="w-full py-2 px-4 rounded-full border bg-white/80 border-stone-200 outline-green-600/80 font-medium"
             />
             <button
               class="bg-stone-800 cursor-pointer text-white w-fit px-5 py-2 rounded-full whitespace-nowrap"
             >
-              Zapisz się
+              {newsletterSection.cta}
             </button>
           </div>
           <p
             class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
           >
-            Zero śmieci. Tylko rzeczy, które mają znaczenie.
+            {newsletterSection.note}
           </p>
         </div>
 
         <h3
           class="tracking-tight text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"
         >
-          Co dostaniesz?
+          {newsletterSection.benefitsTitle}
         </h3>
 
         <ul class="grid md:flex flex-wrap justify-center gap-2 mt-4 mx-auto">
-          <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
-            <BellRingIcon class="size-4 h-lh opacity-75" />
-            <span class="font-[450]">Powiadomienia o nowiutkich funkcjach</span>
-          </li>
-           <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
-            <BugOffIcon class="size-4 h-lh opacity-75" />
-            <span class="font-[450]">Ważne poprawki i zmiany, które wpływają na Twoją pracę</span>
-          </li>
-           <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
-            <CircleFadingArrowUpIcon class="size-4 h-lh opacity-75" />
-            <span class="font-[450]">Krótkie aktualizacje bez spamu i marketingowych epopei</span>
-          </li>
+          {newsletterSection.benefits.map(({ text, icon: Icon }) => (
+            <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+              <Icon class="size-4 h-lh opacity-75" />
+              <span class="font-[450]">{text}</span>
+            </li>
+          ))}
         </ul>
       </section>
 
       <section class="p-4 mt-12 md:mt-32">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">FAQ</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">{faqSection.title}</h2>
         <p 
           class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
-          Najczęściej zadawane pytania o TreeAgent
+          {faqSection.description}
         </p>
         <div class="divide-y divide-slate-200 mt-16 max-w-2xl mx-auto space-y-4">
           {
-            faqs.map((faq, index) => (
+            faqSection.items.map((faq, index) => (
               <div x-data="{ expanded: false }" class="py-2">
                 <h2>
                   <button
@@ -528,7 +534,7 @@ Soon
         <p
           class="translate-y-1/5 text-center font-bold text-stone-600/10 text-6xl md:text-9xl"
         >
-          TreeAgent
+          {footer.brand}
         </p>
       </footer>
     </main>
