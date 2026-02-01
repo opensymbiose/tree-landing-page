@@ -28,7 +28,7 @@ import {
   Settings2Icon,
   TreesIcon,
   UserRoundIcon,
-  XIcon
+  XIcon,
 } from "@lucide/astro";
 
 // ============================================================================
@@ -39,9 +39,11 @@ const siteUrl = "https://treeagent.app"; // TODO: update with actual URL
 
 const meta = {
   title: "TreeAgent – System do inspekcji i inwentaryzacji drzew",
-  description: "Profesjonalna aplikacja do inspekcji drzew, inwentaryzacji zieleni i raportowania. Jedno narzędzie dla arborystów, inspektorów i zarządców terenów zielonych.",
+  description:
+    "Profesjonalna aplikacja do inspekcji drzew, inwentaryzacji zieleni i raportowania. Jedno narzędzie dla arborystów, inspektorów i zarządców terenów zielonych.",
   ogImage: "/og-image.png", // TODO: create 1200x630px image
-  keywords: "inspekcja drzew, inwentaryzacja drzew, arborystyka, zarządzanie zielenią, oprogramowanie dla arborystów, monitoring drzew, dendrologia",
+  keywords:
+    "inspekcja drzew, inwentaryzacja drzew, arborystyka, zarządzanie zielenią, oprogramowanie dla arborystów, monitoring drzew, dendrologia",
 };
 
 const nav = {
@@ -56,9 +58,11 @@ const nav = {
 const heroSection = {
   microcopy: "Dla nowoczesnych profesjonalistów",
   title: "Prosty system do zarządzania inspekcjami drzew.",
-  description: "Kontroluj, śledź i dokumentuj drzewa w jednym inteligentnym systemie, który wspiera realną pracę w terenie i długoterminowe decyzje.",
+  description:
+    "Kontroluj, śledź i dokumentuj drzewa w jednym inteligentnym systemie, który wspiera realną pracę w terenie i długoterminowe decyzje.",
   cta: "Poznaj TreeAgent",
-  imageAlt: "Interfejs aplikacji TreeAgent pokazujący mapę z drzewami i panel inspekcji",
+  imageAlt:
+    "Interfejs aplikacji TreeAgent pokazujący mapę z drzewami i panel inspekcji",
 };
 
 const forWhoSection = {
@@ -76,7 +80,8 @@ const forWhoSection = {
     },
     {
       title: "Organizacje i instytucje dbające o zieleń",
-      description: "Uporządkowana dokumentacja i bieżąca kontrola stanu zieleni.",
+      description:
+        "Uporządkowana dokumentacja i bieżąca kontrola stanu zieleni.",
       icon: TreesIcon,
     },
   ],
@@ -112,33 +117,38 @@ const problemSection = {
 const solutionSection = {
   microcopy: "Rozwiązanie",
   title: "Jak TreeAgent rozwiązuje te problemy?",
-  description: "TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.",
+  description:
+    "TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.",
   features: [
     {
       microcopy: "Jedno miejsce zamiast rozproszonych informacji",
       title: "Klienci - jasno i bez chaosu",
-      description: "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
+      description:
+        "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
       mobileImage: clientsMobile,
       image: clients,
     },
     {
       microcopy: "Porządek dopasowany do przebiegu prac",
       title: "Projekty, które odzwierciedlają realną pracę.",
-      description: "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
+      description:
+        "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
       mobileImage: projectsMobile,
       image: projects,
     },
     {
       microcopy: "Te same obiekty, kolejne działania",
       title: "Drzewa dodajesz raz. Potem tylko pracujesz.",
-      description: "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
+      description:
+        "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
       mobileImage: treesMobile,
       image: trees,
     },
     {
       microcopy: "Przestrzeń zamiast listy punktów",
       title: "Mapa, która naprawdę pomaga.",
-      description: "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
+      description:
+        "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
       mobileImage: mapMobile,
       image: map,
     },
@@ -147,7 +157,8 @@ const solutionSection = {
 
 const upcomingSection = {
   title: "Nad czym pracujemy teraz?",
-  description: "TreeAgent jest ciągle rozwijany i aktualizowany. Pracujemy nad nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.",
+  description:
+    "TreeAgent jest ciągle rozwijany i aktualizowany. Pracujemy nad nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.",
   badge: "Wkrótce",
   items: [
     {
@@ -163,7 +174,8 @@ const upcomingSection = {
 
 const newsletterSection = {
   title: "Bądzmy w kontakcie!",
-  description: "TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.",
+  description:
+    "TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.",
   placeholder: "Twój email",
   cta: "Zapisz się",
   note: "Zero śmieci. Tylko rzeczy, które mają znaczenie.",
@@ -190,43 +202,55 @@ const faqSection = {
   items: [
     {
       question: "Co to jest TreeAgent?",
-      answer: "TreeAgent to profesjonalna aplikacja do inspekcji drzew i inwentaryzacji zieleni, która pozwala zarządzać danymi, inspekcjami i raportami w jednym spójnym systemie. Narzędzie wspiera arborystów i specjalistów środowiskowych - od zarządzania klientami, przez pracę w terenie, aż po gotową dokumentację.",
+      answer:
+        "TreeAgent to profesjonalna aplikacja do inspekcji drzew i inwentaryzacji zieleni, która pozwala zarządzać danymi, inspekcjami i raportami w jednym spójnym systemie. Narzędzie wspiera arborystów i specjalistów środowiskowych - od zarządzania klientami, przez pracę w terenie, aż po gotową dokumentację.",
     },
     {
       question: "Dla kogo został zaprojektowany TreeAgent?",
-      answer: "TreeAgent został stworzony z myślą o opiekunach drzew - arborystach, dendrologach, inspektorach drzew, architektach budowlanych i krajobrazu, konsultantach, urzędach i ich pracownikach. To także narzędzie dla całych organizacji zajmujących się zarządzaniem drzewami - zarówno w sektorze publicznym, jak i prywatnym. Sprawdzi się wszędzie tam, gdzie potrzebne jest uporządkowane oprogramowanie do inwentaryzacji i monitoringu drzew.",
+      answer:
+        "TreeAgent został stworzony z myślą o opiekunach drzew - arborystach, dendrologach, inspektorach drzew, architektach budowlanych i krajobrazu, konsultantach, urzędach i ich pracownikach. To także narzędzie dla całych organizacji zajmujących się zarządzaniem drzewami - zarówno w sektorze publicznym, jak i prywatnym. Sprawdzi się wszędzie tam, gdzie potrzebne jest uporządkowane oprogramowanie do inwentaryzacji i monitoringu drzew.",
     },
     {
       question: "Czy muszę dodawać to samo drzewo przy każdej inspekcji?",
-      answer: "Nie. Każde drzewo dodajesz do systemu tylko raz. Później wracasz do niego przy kolejnych inspekcjach, aktualizacjach lub długoterminowym monitoringu. Dzięki temu dane drzew są spójne, a historia inspekcji zachowana bez powielania informacji.",
+      answer:
+        "Nie. Każde drzewo dodajesz do systemu tylko raz. Później wracasz do niego przy kolejnych inspekcjach, aktualizacjach lub długoterminowym monitoringu. Dzięki temu dane drzew są spójne, a historia inspekcji zachowana bez powielania informacji.",
     },
     {
       question: "Czy mogę przerwać inspekcję i wrócić do niej później?",
-      answer: "Tak. Inspekcje w TreeAgent możesz tworzyć stopniowo - zapisać je w trakcie i wrócić w dowolnym momencie. To szczególnie ważne w pracy terenowej, gdzie inspekcje drzew często rozciągają się na kilka wizyt.",
+      answer:
+        "Tak. Inspekcje w TreeAgent możesz tworzyć stopniowo - zapisać je w trakcie i wrócić w dowolnym momencie. To szczególnie ważne w pracy terenowej, gdzie inspekcje drzew często rozciągają się na kilka wizyt.",
     },
     {
       question: "Jak działa zarządzanie projektami w TreeAgent?",
-      answer: "Projekty pozwalają grupować drzewa i inspekcje w jednym kontekście - np. według lokalizacji, klienta lub umowy. Dzięki temu zarządzanie inwentaryzacją drzew jest czytelne, a praca uporządkowana nawet przy dużej liczbie danych.",
+      answer:
+        "Projekty pozwalają grupować drzewa i inspekcje w jednym kontekście - np. według lokalizacji, klienta lub umowy. Dzięki temu zarządzanie inwentaryzacją drzew jest czytelne, a praca uporządkowana nawet przy dużej liczbie danych.",
     },
     {
       question: "Czy TreeAgent nadaje się do pracy w terenie?",
-      answer: "Zdecydowanie tak. TreeAgent został zaprojektowany wokół realnych scenariuszy pracy w terenie. Umożliwia elastyczne wprowadzanie danych, częściowe uzupełnianie inspekcji i płynne kontynuowanie pracy między kolejnymi wizytami na miejscu.",
+      answer:
+        "Zdecydowanie tak. TreeAgent został zaprojektowany wokół realnych scenariuszy pracy w terenie. Umożliwia elastyczne wprowadzanie danych, częściowe uzupełnianie inspekcji i płynne kontynuowanie pracy między kolejnymi wizytami na miejscu.",
     },
     {
       question: "Czy mogę generować raporty bezpośrednio z inspekcji?",
-      answer: "Tak. TreeAgent automatycznie przekształca dane z inspekcji w czytelne, profesjonalne raporty z inspekcji drzew, gotowe do przekazania klientowi lub interesariuszom - bez ręcznego składania dokumentów.",
+      answer:
+        "Tak. TreeAgent automatycznie przekształca dane z inspekcji w czytelne, profesjonalne raporty z inspekcji drzew, gotowe do przekazania klientowi lub interesariuszom - bez ręcznego składania dokumentów.",
     },
     {
       question: "Co dzieje się z danymi, gdy tworzę nową inspekcję?",
-      answer: "Wszystkie istniejące dane drzew pozostają nienaruszone. Nowa inspekcja bazuje na wcześniejszych zapisach, dzięki czemu zachowujesz ciągłość informacji i pełny kontekst historyczny, bez nadpisywania wcześniejszych ocen.",
+      answer:
+        "Wszystkie istniejące dane drzew pozostają nienaruszone. Nowa inspekcja bazuje na wcześniejszych zapisach, dzięki czemu zachowujesz ciągłość informacji i pełny kontekst historyczny, bez nadpisywania wcześniejszych ocen.",
     },
     {
-      question: "Czy TreeAgent nadaje się do długoterminowego monitoringu drzew?",
-      answer: "Tak. TreeAgent został zaprojektowany jako narzędzie do długoterminowego monitoringu drzew, umożliwiające śledzenie zmian, ryzyk i zaleceń w czasie - od pierwszej inspekcji po kolejne lata obserwacji.",
+      question:
+        "Czy TreeAgent nadaje się do długoterminowego monitoringu drzew?",
+      answer:
+        "Tak. TreeAgent został zaprojektowany jako narzędzie do długoterminowego monitoringu drzew, umożliwiające śledzenie zmian, ryzyk i zaleceń w czasie - od pierwszej inspekcji po kolejne lata obserwacji.",
     },
     {
-      question: "Czy do korzystania z TreeAgent potrzebna jest zaawansowana wiedza technologiczna?",
-      answer: "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
+      question:
+        "Czy do korzystania z TreeAgent potrzebna jest zaawansowana wiedza technologiczna?",
+      answer:
+        "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
     },
   ],
 };
@@ -241,16 +265,16 @@ const footer = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Primary Meta Tags -->
     <title>{meta.title}</title>
     <meta name="title" content={meta.title} />
     <meta name="description" content={meta.description} />
     <meta name="keywords" content={meta.keywords} />
-    
+
     <!-- Canonical -->
     <link rel="canonical" href={siteUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
@@ -259,349 +283,519 @@ const footer = {
     <meta property="og:image" content={`${siteUrl}${meta.ogImage}`} />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:site_name" content="TreeAgent" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={siteUrl} />
     <meta name="twitter:title" content={meta.title} />
     <meta name="twitter:description" content={meta.description} />
     <meta name="twitter:image" content={`${siteUrl}${meta.ogImage}`} />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
+
     <!-- Theme -->
     <meta name="theme-color" content="#1c1917" />
-    
+
     <!-- Structured Data - SoftwareApplication -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TreeAgent",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": meta.description,
-      "url": siteUrl,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "PLN"
-      }
-    })} />
-    
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "TreeAgent",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description: meta.description,
+        url: siteUrl,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "PLN",
+        },
+      })}
+    />
+
     <!-- Structured Data - FAQ -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqSection.items.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    })} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqSection.items.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      })}
+    />
   </head>
   <body class="bg-stone-50 text-stone-800 antialiased">
-    <main class="max-w-7xl w-full mx-auto">
-      <header x-data="{ mobileOpen: false }" class="p-4">
-        <div class="flex items-center justify-between">
-          <a href="/"><Image src={logo} alt="TreeAgent - system do inspekcji drzew" class="w-32" width="128" height="26" /></a>
-          <nav class="hidden md:flex items-center gap-8 justify-center font-[450]">
-            {nav.items.map(({ label, href }) => (
-              <a href={href} class="hover:text-stone-950 hover:underline underline-offset-2 transition-all">{label}</a>
-            ))}
+    <main class="">
+      <header class="p-4 sticky top-0 z-50 bg-stone-50/80 backdrop-blur-sm">
+        <div class="flex items-center justify-between max-w-7xl w-full mx-auto">
+          <a href="/"
+            ><Image
+              src={logo}
+              alt="TreeAgent - system do inspekcji drzew"
+              class="w-32"
+              width="128"
+              height="26"
+            /></a
+          >
+          <nav
+            class="hidden md:flex items-center gap-8 justify-center font-[450]"
+          >
+            {
+              nav.items.map(({ label, href }) => (
+                <a
+                  href={href}
+                  class="hover:text-stone-950 hover:underline underline-offset-2 transition-all"
+                >
+                  {label}
+                </a>
+              ))
+            }
           </nav>
           <div class="flex items-center gap-3">
-            <a href="#newsletter"
+            <a
+              href="#newsletter"
               class="bg-orange-600/80 hover:bg-orange-600 border border-orange-600 text-orange-50 w-fit px-3 py-1 rounded-full font-medium inline-flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               {nav.signup}
             </a>
             <button
               type="button"
+              id="mobile-menu-toggle"
               class="md:hidden inline-flex items-center justify-center text-stone-700 w-9 h-9"
-              @click="mobileOpen = !mobileOpen"
-              :aria-expanded="mobileOpen"
+              aria-expanded="false"
               aria-controls="mobile-menu"
               aria-label="Otwórz menu"
             >
-             <MenuIcon class="size-5" />
+              <MenuIcon class="size-5" />
             </button>
           </div>
-        </div>
-        <div
-          id="mobile-menu"
-          class="md:hidden fixed inset-0 z-50 bg-stone-100/95 backdrop-blur-sm p-6"
-          x-show="mobileOpen"
-          x-transition.opacity
-          @click.outside="mobileOpen = false"
-        >
-          <button
-            type="button"
-            class="absolute top-4 right-4 inline-flex items-center justify-center text-stone-700 w-9 h-9"
-            @click="mobileOpen = false"
-            aria-label="Zamknij menu"
-          >
-            <XIcon class="size-5" />
-          </button>
-          <nav class="grid gap-4 text-lg font-medium">
-            {nav.items.map(({ label, href }) => (
-              <a href={href} class="py-1" @click="mobileOpen = false">{label}</a>
-            ))}
-          </nav>
         </div>
       </header>
 
-      <section class="px-6 md:px-10 mt-10 md:mt-24">
-        <div>
-          <small class="text-orange-600 font-medium text-sm uppercase">{heroSection.microcopy}</small>
-          <h1 class="text-3xl md:text-5xl md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-2xl">
-            {heroSection.title}
-          </h1>
-          <p class="font-[450] text-stone-600 text-lg max-w-lg md:max-w-2xl text-balance mt-4">
-            {heroSection.description}
-          </p>
-          <a
-          href="#funkcje"
-            class="bg-stone-950 hover:bg-stone-800 border border-stone-600 text-stone-50 font-medium w-fit px-5 py-2 rounded-full mt-5.5 flex items-center gap-1.5 transition-colors cursor-pointer"
-          >
-            <span>{heroSection.cta}</span>
-            <ArrowDownIcon class="size-4" />
-          </a>
-        </div>
-
-        <Image src={hero} alt={heroSection.imageAlt} class="w-full aspect-video object-cover rounded-lg mt-20 max-md:hidden" />
-        <Image src={heroMobile} alt={heroSection.imageAlt} class="w-full object-cover rounded-lg mt-12 md:hidden" />
-      </section>
-
-      <section id="dla-kogo" class="p-4 mt-12 md:mt-32 scroll-mt-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">
-          {forWhoSection.title}
-        </h2>
-        <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-12 md:mt-16">
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed inset-0 z-50 size-full bg-stone-100/95 backdrop-blur-sm p-6 hidden opacity-0 transition-opacity duration-200 overscroll-contain"
+      >
+        <button
+          type="button"
+          id="mobile-menu-close"
+          class="absolute top-4 right-4 inline-flex items-center justify-center text-stone-700 w-9 h-9"
+          aria-label="Zamknij menu"
+        >
+          <XIcon class="size-5" />
+        </button>
+        <nav
+          class="grid gap-4 text-lg font-medium h-full justify-center content-center"
+        >
           {
-            forWhoSection.items.map(({ title, description }) => (
-              <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-4 bg-lines">
-                <div class="flex items-center gap-1">
-                  <p class="font-medium text-xl leading-tight text-stone-950">{title}</p>
-                </div>
-                <p class="text-stone-600 mt-1 text-balance border-stone-300 font-[450] md:text-lg">
-                  {description}
-                </p>
-              </li>
+            nav.items.map(({ label, href }) => (
+              <a href={href} class="py-1 mobile-menu-link text-3xl">
+                {label}
+              </a>
             ))
           }
-        </ul>
-      </section>
+        </nav>
+      </div>
 
-      <section class="p-4 mt-12 md:mt-32">
-        <small class="text-red-600 font-medium text-sm text-center uppercase block">{problemSection.microcopy}</small>
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 max-w-xl mx-auto">
-          {problemSection.title}
-        </h2>
-        <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
-          {problemSection.items.map(({ text, icon: Icon }) => (
-            <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600">
-              <span>
-                <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
-              </span>
-              <p class="font-[450] md:text-lg">
-                {text}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="funkcje" class="p-4 mt-12 md:mt-32 scroll-mt-20">
-        <small class="text-green-600 font-medium text-sm text-center uppercase block">{solutionSection.microcopy}</small>
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 mx-auto">
-          {solutionSection.title.split("TreeAgent")[0]}<span class="text-green-600">TreeAgent</span>{solutionSection.title.split("TreeAgent")[1]}
-        </h2>
-        <p
-          class="tracking-tight text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
-        >
-          {solutionSection.description}
-        </p>
-
-        <div class="mt-16 grid gap-12">
-          {solutionSection.features.map(({microcopy, title, description, image, mobileImage}) => (
-            <div
-              class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]"
+      <div class="max-w-7xl w-full mx-auto">
+        <section class="px-6 md:px-10 mt-10 md:mt-24">
+          <div>
+            <small class="text-orange-600 font-medium text-sm uppercase"
+              >{heroSection.microcopy}</small
             >
-              <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
-                <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
-                <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
-                  {title}
-                </p>
-                <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
-                  {description}
-                </p>
-              </div>
-              <Image
-                src={image}
-                alt={`TreeAgent - ${title}`}
-                class="rounded-lg max-sm:hidden"
-              />
-              <Image
-                src={mobileImage}
-                alt={`TreeAgent - ${title}`}
-                class="rounded-lg sm:hidden"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section class="p-4 mt-12 md:mt-32">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
-          {upcomingSection.title}
-        </h2>
-        <p
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
-        >
-          {upcomingSection.description}
-        </p>
-
-        <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
-          {upcomingSection.items.map(({ text, icon: Icon }) => (
-            <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2">
-              <span>
-                <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
-              </span>
-              <p class="font-[450] md:text-lg">
-                {text}
-              </p>
-              <div
-                class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline"
-              >
-                {upcomingSection.badge}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="newsletter" class="p-4 mt-16 bg-stone-400/10 rounded-lg py-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
-          {newsletterSection.title}
-        </h2>
-        <p
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
-        >
-          {newsletterSection.description}
-        </p>
-
-        <div class="my-16">
-          <div class="flex items-center gap-2 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder={newsletterSection.placeholder}
-              class="w-full py-2 px-4 rounded-full border bg-white/80 border-stone-200 outline-green-600/80 font-medium"
-            />
-            <button
-              class="bg-stone-800 cursor-pointer text-white w-fit px-5 py-2 rounded-full whitespace-nowrap"
+            <h1
+              class="text-3xl md:text-5xl md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-2xl"
             >
-              {newsletterSection.cta}
-            </button>
+              {heroSection.title}
+            </h1>
+            <p
+              class="font-[450] text-stone-600 text-lg max-w-lg md:max-w-2xl text-balance mt-4"
+            >
+              {heroSection.description}
+            </p>
+            <a
+              href="#funkcje"
+              class="bg-stone-950 hover:bg-stone-800 border border-stone-600 text-stone-50 font-medium w-fit px-5 py-2 rounded-full mt-5.5 flex items-center gap-1.5 transition-colors cursor-pointer"
+            >
+              <span>{heroSection.cta}</span>
+              <ArrowDownIcon class="size-4" />
+            </a>
           </div>
-          <p
-            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
+
+          <Image
+            src={hero}
+            alt={heroSection.imageAlt}
+            class="w-full aspect-video object-cover rounded-lg mt-20 max-md:hidden"
+          />
+          <Image
+            src={heroMobile}
+            alt={heroSection.imageAlt}
+            class="w-full object-cover rounded-lg mt-12 md:hidden"
+          />
+        </section>
+
+        <section id="dla-kogo" class="p-4 mt-12 md:mt-32 scroll-mt-20">
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center"
           >
-            {newsletterSection.note}
-          </p>
-        </div>
-
-        <h3
-          class="tracking-tight text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"
-        >
-          {newsletterSection.benefitsTitle}
-        </h3>
-
-        <ul class="grid md:flex flex-wrap justify-center gap-2 mt-4 mx-auto">
-          {newsletterSection.benefits.map(({ text, icon: Icon }) => (
-            <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
-              <Icon class="size-4 h-lh opacity-75" />
-              <span class="font-[450]">{text}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="faq" class="p-4 mt-12 md:mt-32 scroll-mt-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">{faqSection.title}</h2>
-        <p 
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
-        >
-          {faqSection.description}
-        </p>
-        <div class="divide-y divide-slate-200 mt-16 max-w-2xl mx-auto space-y-4">
-          {
-            faqSection.items.map((faq, index) => (
-              <div x-data="{ expanded: false }" class="py-2">
-                <h2>
-                  <button
-                    id={`faqs-title-${index}`}
-                    type="button"
-                    class="flex items-center justify-between w-full text-left tracking-tight text-xl font-medium py-2"
-                    @click="expanded = !expanded"
-                    :aria-expanded="expanded"
-                    aria-controls={`faqs-text-${index}`}
-                  >
-                    <span>{faq.question}</span>
-                    <svg
-                      class="fill-stone-800 shrink-0 ml-8"
-                      width="16"
-                      height="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        y="7"
-                        width="16"
-                        height="2"
-                        rx="1"
-                        class="transform origin-center transition duration-200 ease-out"
-                        :class="{'!rotate-180': expanded}"></rect>
-                      <rect
-                        y="7"
-                        width="16"
-                        height="2"
-                        rx="1"
-                        class="transform origin-center rotate-90 transition duration-200 ease-out"
-                        :class="{'!rotate-180': expanded}"></rect>
-                    </svg>
-                  </button>
-                </h2>
-                <div
-                  id={`faqs-text-${index}`}
-                  role="region"
-                  aria-labelledby={`faqs-title-${index}`}
-                  class="grid overflow-hidden transition-all duration-300 ease-in-out"
-                  :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-                >
-                  <div class="overflow-hidden">
-                    <p class="pb-3 tracking-tight text-stone-600 text-balance font-[450] md:text-lg">
-                      {faq.answer}
+            {forWhoSection.title}
+          </h2>
+          <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-12 md:mt-16">
+            {
+              forWhoSection.items.map(({ title, description }) => (
+                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-4 bg-lines">
+                  <div class="flex items-center gap-1">
+                    <p class="font-medium text-xl leading-tight text-stone-950">
+                      {title}
                     </p>
                   </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </section>
+                  <p class="text-stone-600 mt-1 text-balance border-stone-300 font-[450] md:text-lg">
+                    {description}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
 
-      <footer class="overflow-hidden pt-24 border-t border-stone-200/75">
-        <p
-          class="translate-y-1/5 text-center font-bold text-stone-600/10 text-6xl md:text-9xl"
+        <section class="p-4 mt-12 md:mt-32">
+          <small
+            class="text-red-600 font-medium text-sm text-center uppercase block"
+            >{problemSection.microcopy}</small
+          >
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 max-w-xl mx-auto"
+          >
+            {problemSection.title}
+          </h2>
+          <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
+            {
+              problemSection.items.map(({ text, icon: Icon }) => (
+                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600">
+                  <span>
+                    <Icon class="w-4 md:w-5 h-lh opacity-75" />
+                  </span>
+                  <p class="font-[450] md:text-lg">{text}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="funkcje" class="p-4 mt-12 md:mt-32 scroll-mt-20">
+          <small
+            class="text-green-600 font-medium text-sm text-center uppercase block"
+            >{solutionSection.microcopy}</small
+          >
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 mx-auto"
+          >
+            {solutionSection.title.split("TreeAgent")[0]}<span
+              class="text-green-600">TreeAgent</span
+            >{solutionSection.title.split("TreeAgent")[1]}
+          </h2>
+          <p
+            class="tracking-tight text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+          >
+            {solutionSection.description}
+          </p>
+
+          <div class="mt-16 grid gap-12">
+            {
+              solutionSection.features.map(
+                ({ microcopy, title, description, image, mobileImage }) => (
+                  <div class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]">
+                    <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
+                      <small class="text-green-600 font-medium text-sm uppercase text-balance">
+                        {microcopy}
+                      </small>
+                      <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
+                        {title}
+                      </p>
+                      <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
+                        {description}
+                      </p>
+                    </div>
+                    <Image
+                      src={image}
+                      alt={`TreeAgent - ${title}`}
+                      class="rounded-lg max-sm:hidden"
+                    />
+                    <Image
+                      src={mobileImage}
+                      alt={`TreeAgent - ${title}`}
+                      class="rounded-lg sm:hidden"
+                    />
+                  </div>
+                )
+              )
+            }
+          </div>
+        </section>
+
+        <section class="p-4 mt-12 md:mt-32">
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance"
+          >
+            {upcomingSection.title}
+          </h2>
+          <p
+            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+          >
+            {upcomingSection.description}
+          </p>
+
+          <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
+            {
+              upcomingSection.items.map(({ text, icon: Icon }) => (
+                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2">
+                  <span>
+                    <Icon class="w-4 md:w-5 h-lh opacity-75" />
+                  </span>
+                  <p class="font-[450] md:text-lg">{text}</p>
+                  <div class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline">
+                    {upcomingSection.badge}
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section
+          id="newsletter"
+          class="p-4 mt-16 bg-stone-400/10 rounded-lg py-16"
         >
-          {footer.brand}
-        </p>
-      </footer>
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance"
+          >
+            {newsletterSection.title}
+          </h2>
+          <p
+            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+          >
+            {newsletterSection.description}
+          </p>
+
+          <div class="my-16">
+            <div class="flex items-center gap-2 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder={newsletterSection.placeholder}
+                class="w-full py-2 px-4 rounded-full border bg-white/80 border-stone-200 outline-green-600/80 font-medium"
+              />
+              <button
+                class="bg-stone-800 cursor-pointer text-white w-fit px-5 py-2 rounded-full whitespace-nowrap"
+              >
+                {newsletterSection.cta}
+              </button>
+            </div>
+            <p
+              class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
+            >
+              {newsletterSection.note}
+            </p>
+          </div>
+
+          <h3
+            class="tracking-tight text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"
+          >
+            {newsletterSection.benefitsTitle}
+          </h3>
+
+          <ul class="grid md:flex flex-wrap justify-center gap-2 mt-4 mx-auto">
+            {
+              newsletterSection.benefits.map(({ text, icon: Icon }) => (
+                <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+                  <Icon class="size-4 h-lh opacity-75" />
+                  <span class="font-[450]">{text}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="faq" class="p-4 mt-12 md:mt-32 scroll-mt-20">
+          <h2
+            class="text-3xl md:text-4xl font-medium tracking-tight text-center"
+          >
+            {faqSection.title}
+          </h2>
+          <p
+            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+          >
+            {faqSection.description}
+          </p>
+          <div
+            class="divide-y divide-slate-200 mt-16 max-w-2xl mx-auto space-y-4"
+          >
+            {
+              faqSection.items.map((faq, index) => (
+                <div class="py-2 faq-item">
+                  <h2>
+                    <button
+                      id={`faqs-title-${index}`}
+                      type="button"
+                      class="faq-toggle flex items-center justify-between w-full text-left tracking-tight text-xl font-medium py-2"
+                      aria-expanded="false"
+                      aria-controls={`faqs-text-${index}`}
+                    >
+                      <span>{faq.question}</span>
+                      <svg
+                        class="faq-icon fill-stone-800 shrink-0 ml-8"
+                        width="16"
+                        height="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          y="7"
+                          width="16"
+                          height="2"
+                          rx="1"
+                          class="faq-icon-horizontal transform origin-center transition duration-200 ease-out"
+                        />
+                        <rect
+                          y="7"
+                          width="16"
+                          height="2"
+                          rx="1"
+                          class="faq-icon-vertical transform origin-center rotate-90 transition duration-200 ease-out"
+                        />
+                      </svg>
+                    </button>
+                  </h2>
+                  <div
+                    id={`faqs-text-${index}`}
+                    role="region"
+                    aria-labelledby={`faqs-title-${index}`}
+                    class="faq-content grid overflow-hidden transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
+                  >
+                    <div class="overflow-hidden">
+                      <p class="pb-3 tracking-tight text-stone-600 text-balance font-[450] md:text-lg">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <footer class="overflow-hidden pt-24 border-t border-stone-200/75">
+          <p
+            class="translate-y-1/5 text-center font-bold text-stone-600/10 text-6xl md:text-9xl"
+          >
+            {footer.brand}
+          </p>
+        </footer>
+      </div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileMenuClose = document.getElementById("mobile-menu-close");
+        const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+        function openMobileMenu() {
+          mobileMenu?.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+          requestAnimationFrame(() => {
+            mobileMenu?.classList.remove("opacity-0");
+            mobileMenu?.classList.add("opacity-100");
+          });
+          mobileMenuToggle?.setAttribute("aria-expanded", "true");
+        }
+
+        function closeMobileMenu() {
+          mobileMenu?.classList.remove("opacity-100");
+          mobileMenu?.classList.add("opacity-0");
+          document.body.classList.remove("overflow-hidden");
+          mobileMenu?.addEventListener(
+            "transitionend",
+            () => {
+              mobileMenu?.classList.add("hidden");
+            },
+            { once: true }
+          );
+          mobileMenuToggle?.setAttribute("aria-expanded", "false");
+        }
+
+        mobileMenuToggle?.addEventListener("click", () => {
+          const isOpen = !mobileMenu?.classList.contains("hidden");
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
+        });
+
+        mobileMenuClose?.addEventListener("click", closeMobileMenu);
+
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        // Remove overflow-hidden when resizing to desktop
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            document.body.classList.remove("overflow-hidden");
+            mobileMenu?.classList.add("hidden", "opacity-0");
+            mobileMenu?.classList.remove("opacity-100");
+            mobileMenuToggle?.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Close on click outside
+        // mobileMenu?.addEventListener("click", (e) => {
+        //   if (e.target === mobileMenu) {
+        //     closeMobileMenu();
+        //   }
+        // });
+
+        // FAQ accordion
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const faqItem = toggle.closest(".faq-item");
+            const content = faqItem?.querySelector(".faq-content");
+            const horizontalRect = toggle.querySelector(".faq-icon-horizontal");
+            const verticalRect = toggle.querySelector(".faq-icon-vertical");
+            const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+            if (isExpanded) {
+              // Collapse
+              toggle.setAttribute("aria-expanded", "false");
+              content?.classList.remove("grid-rows-[1fr]", "opacity-100");
+              content?.classList.add("grid-rows-[0fr]", "opacity-0");
+              horizontalRect?.classList.remove("!rotate-180");
+              verticalRect?.classList.remove("!rotate-180");
+            } else {
+              // Expand
+              toggle.setAttribute("aria-expanded", "true");
+              content?.classList.remove("grid-rows-[0fr]", "opacity-0");
+              content?.classList.add("grid-rows-[1fr]", "opacity-100");
+              horizontalRect?.classList.add("!rotate-180");
+              verticalRect?.classList.add("!rotate-180");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
