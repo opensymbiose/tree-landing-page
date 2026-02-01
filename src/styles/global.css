@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "GeneralSans";
   src: url("/fonts/GeneralSans-Variable.woff2") format("woff2");
