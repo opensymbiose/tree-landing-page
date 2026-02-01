@@ -35,8 +35,13 @@ import {
 // CONTENT / TEXTS
 // ============================================================================
 
+const siteUrl = "https://treeagent.app"; // TODO: update with actual URL
+
 const meta = {
-  title: "TreeAgent – Tree Inventory & Inspection System",
+  title: "TreeAgent – System do inspekcji i inwentaryzacji drzew",
+  description: "Profesjonalna aplikacja do inspekcji drzew, inwentaryzacji zieleni i raportowania. Jedno narzędzie dla arborystów, inspektorów i zarządców terenów zielonych.",
+  ogImage: "/og-image.png", // TODO: create 1200x630px image
+  keywords: "inspekcja drzew, inwentaryzacja drzew, arborystyka, zarządzanie zielenią, oprogramowanie dla arborystów, monitoring drzew, dendrologia",
 };
 
 const nav = {
@@ -53,6 +58,7 @@ const heroSection = {
   title: "A simple system for managing tree inspections.",
   description: "Inspect, track, and maintain trees in one intelligent system that supports real field work and long-term decisions.",
   cta: "Poznaj TreeAgent",
+  imageAlt: "Interfejs aplikacji TreeAgent pokazujący mapę z drzewami i panel inspekcji",
 };
 
 const forWhoSection = {
@@ -230,20 +236,80 @@ const footer = {
 };
 ---
 
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
     <title>{meta.title}</title>
+    <meta name="title" content={meta.title} />
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    
+    <!-- Canonical -->
+    <link rel="canonical" href={siteUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={`${siteUrl}${meta.ogImage}`} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="TreeAgent" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={`${siteUrl}${meta.ogImage}`} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#1c1917" />
+    
+    <!-- Structured Data - SoftwareApplication -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TreeAgent",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": meta.description,
+      "url": siteUrl,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN"
+      }
+    })} />
+    
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqSection.items.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    })} />
   </head>
   <body class="bg-stone-50 text-stone-800 antialiased">
     <main class="max-w-7xl w-full mx-auto">
       <header x-data="{ mobileOpen: false }" class="p-4">
         <div class="flex items-center justify-between">
-          <Image src={logo} alt="Logo" class="w-32" width="128" height="26" />
+          <a href="/"><Image src={logo} alt="TreeAgent - system do inspekcji drzew" class="w-32" width="128" height="26" /></a>
           <nav class="hidden md:flex items-center gap-8 justify-center font-[450]">
             {nav.items.map(({ label, href }) => (
               <a href={href} class="hover:text-stone-950 hover:underline underline-offset-2 transition-all">{label}</a>
@@ -313,8 +379,8 @@ const footer = {
           </button>
         </div>
 
-        <Image src={hero} alt="Hero" class="w-full aspect-video object-cover rounded-lg mt-20 max-md:hidden" />
-        <Image src={heroMobile} alt="Hero" class="w-full object-cover rounded-lg mt-12 md:hidden" />
+        <Image src={hero} alt={heroSection.imageAlt} class="w-full aspect-video object-cover rounded-lg mt-20 max-md:hidden" />
+        <Image src={heroMobile} alt={heroSection.imageAlt} class="w-full object-cover rounded-lg mt-12 md:hidden" />
       </section>
 
       <section id="dla-kogo" class="p-4 mt-12 md:mt-32 scroll-mt-20">
@@ -383,12 +449,12 @@ const footer = {
               </div>
               <Image
                 src={image}
-                alt=""
+                alt={`TreeAgent - ${title}`}
                 class="rounded-lg max-sm:hidden"
               />
               <Image
                 src={mobileImage}
-                alt=""
+                alt={`TreeAgent - ${title}`}
                 class="rounded-lg sm:hidden"
               />
             </div>
