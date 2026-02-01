@@ -1,8 +1,46 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 100 200 300 400 500 600 700 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("/fonts/GeistMono-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: "GeistMono", sans-serif;
+}
+
 body {
-  font-family: "Inter Variable", sans-serif;
+  /* font-family: "Inter Variable", sans-serif; */
+  font-family: "GeneralSans", sans-serif;
   font-feature-settings: "calt" 1;
+}
+
+small {
+  font-family: "GeistMono", sans-serif;
+}
+
+.bg-lines {
+  background-color: transparent;
+  opacity: 0.8;
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    theme("colors.stone.100") 0,
+    theme("colors.stone.100") 1px,
+    theme("colors.stone.50") 0,
+    theme("colors.stone.50") 50%
+  );
 }
 
 .pain-point-card:nth-child(1) {

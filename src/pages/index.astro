@@ -1,38 +1,33 @@
 ---
 import "../styles/global.css";
-import "@fontsource-variable/inter";
 import { Image } from "astro:assets";
+import clientsMobile from "../assets/clients-mobile.png";
+import clients from "../assets/clients.png";
+import heroMobile from "../assets/hero-mobile.png";
+import hero from "../assets/hero.png";
 import logo from "../assets/logo.svg";
-import ipad1 from "../assets/ipad-1.png";
-import iphone1 from "../assets/iphone-1.png";
-import iphoneClientsList from "../assets/iphone-clients-list.png";
-import iphoneClientsDetails from "../assets/iphone-clients-details.png";
-import iphoneClientsNew from "../assets/iphone-clients-new.png";
-import iphoneProjectsList from "../assets/iphone-projects-list.png";
-import iphoneProjectsDetails from "../assets/iphone-projects-details.png";
-import iphoneProjectsNew from "../assets/iphone-projects-new.png";
-import ipadProjectBerlin from "../assets/ipad-project-berlin-3.png";
-import ipadProjectNormalPlots from "../assets/ipad-project-normal-plots.png";
-import ipadProjectSatelitePlots from "../assets/ipad-project-satelite-plots.png";
+import mapMobile from "../assets/map-mobile.png";
+import map from "../assets/map.png";
+import projectsMobile from "../assets/projects-mobile.png";
+import projects from "../assets/projects.png";
+import treesMobile from "../assets/trees-mobile.png";
+import trees from "../assets/trees.png";
 
 import {
-  UserRoundIcon,
-  Building2Icon,
-  TreesIcon,
-  FileStackIcon,
-  MapIcon,
-  MapPinnedIcon,
+  ArrowDownIcon,
   BellRingIcon,
-  ClockIcon,
-  CircleFadingArrowUp,
-  CircleFadingArrowUpIcon,
   BugOffIcon,
+  Building2Icon,
+  CircleFadingArrowUpIcon,
+  ClockIcon,
+  FileStackIcon,
   HistoryIcon,
-  MessagesSquareIcon,
-  Settings2Icon,
-  WifiOffIcon,
-  XIcon,
+  MapIcon,
   MenuIcon,
+  Settings2Icon,
+  TreesIcon,
+  UserRoundIcon,
+  XIcon
 } from "@lucide/astro";
 
 const forWho = [
@@ -70,22 +65,22 @@ const painPoints = [
     text: "Brak historii drzew utrudnia decyzje projektowe i inwestycyjne",
     icon: HistoryIcon,
   },
-  {
-    text: "Trudności w komunikacji między zespołami i urzędami",
-    icon: MessagesSquareIcon,
-  },
+  // {
+  //   text: "Trudności w komunikacji między zespołami i urzędami",
+  //   icon: MessagesSquareIcon,
+  // },
   {
     text: "Brak logiki dopasowanej do branży",
     icon: Settings2Icon,
   },
-  {
-    text: "Lokalizacja drzew, która komplikuje zamiast pomagać",
-    icon: MapPinnedIcon,
-  },
-  {
-    text: "Brak pewnego trybu offline",
-    icon: WifiOffIcon,
-  },
+  // {
+  //   text: "Lokalizacja drzew, która komplikuje zamiast pomagać",
+  //   icon: MapPinnedIcon,
+  // },
+  // {
+  //   text: "Brak pewnego trybu offline",
+  //   icon: WifiOffIcon,
+  // },
 ];
 
 const faqs = [
@@ -141,6 +136,46 @@ const faqs = [
       "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
   },
 ];
+
+const features = [{
+  microcopy: "Jedno miejsce zamiast rozproszonych informacji",
+  title: "Klienci - jasno i bez chaosu",
+  description: "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
+  mobileImage: clientsMobile,
+  image: clients,
+},
+{
+  microcopy: "Porządek dopasowany do przebiegu prac",
+  title: "Projekty, które odzwierciedlają realną pracę.",
+  description: "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
+  mobileImage: projectsMobile,
+  image: projects,
+},
+{
+  microcopy: "Te same obiekty, kolejne działania",
+  title: "Drzewa dodajesz raz. Potem tylko pracujesz.",
+  description: "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
+  mobileImage: treesMobile,
+  image: trees,
+},
+{
+  microcopy: "Przestrzeń zamiast listy punktów",
+  title: "Mapa, która naprawdę pomaga.",
+  description: "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
+  mobileImage: mapMobile,
+  image: map,
+}]
+
+const upcomingFeatures = [
+  {
+    text: "Raporty gotowe do przekazania klientowi",
+    icon: FileStackIcon,
+  },
+  {
+    text: "Mapa 3D",
+    icon: MapIcon,
+  },
+]
 ---
 
 <html lang="en">
@@ -153,19 +188,19 @@ const faqs = [
     <title>Astro</title>
    
   </head>
-  <body class="bg-stone-100 text-stone-800 antialiased">
+  <body class="bg-stone-50 text-stone-800 antialiased">
     <main class="max-w-7xl w-full mx-auto">
       <header x-data="{ mobileOpen: false }" class="p-4">
         <div class="flex items-center justify-between">
           <Image src={logo} alt="Logo" class="w-32" width="128" height="26" />
-          <nav class="hidden md:flex items-center gap-8 justify-center">
-            <a href="/" class="text-sm">Home</a>
-            <a href="/about" class="text-sm">About</a>
-            <a href="/contact" class="text-sm">Contact</a>
+          <nav class="hidden md:flex items-center gap-8 justify-center font-[450]">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
           </nav>
           <div class="flex items-center gap-3">
             <button
-              class="bg-stone-800 text-white w-fit px-3 py-1 rounded-full font-medium text-sm hidden md:inline-flex"
+              class="bg-stone-200 text-stone-950 w-fit px-3 py-1 rounded-full font-medium hidden md:inline-flex"
             >
               Login
             </button>
@@ -209,73 +244,39 @@ const faqs = [
         </div>
       </header>
 
-      <section class="p-4 mt-24">
+      <section class="px-6 md:px-10 mt-10 md:mt-24">
         <div>
-          <h1 class="text-4xl font-medium tracking-tight">
-            Mniej biura. Więcej <span class="text-orange-600">terenu.</span>
+          <small class="text-orange-600 font-medium text-sm uppercase">Made for modern professionals</small>
+          <h1 class="text-3xl md:text-5xl md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-xl">
+            A simple system for managing tree inspections.
           </h1>
-          <p class="tracking-tight text-stone-600 mt-1">
-            Pracujesz z drzewami, resztę ogarnia aplikacja.
+          <p class="__tracking-tight font-[450] text-stone-600 text-lg max-w-lg md:text-balance mt-4">
+            Inspect, track, and maintain trees in one intelligent system that supports real field work and long-term decisions. 
           </p>
           <button
-            class="bg-stone-800 text-white w-fit px-5 py-2 rounded-full mt-5.5"
+            class="bg-stone-800 font-medium text-white w-fit px-5 py-2 rounded-full mt-5.5 flex items-center gap-1.5"
           >
-            Poznaj TreeAgent
+            <span>Poznaj TreeAgent</span>
+            <ArrowDownIcon class="size-4" />
           </button>
         </div>
 
-        <div class="relative overflow-hidden mt-20">
-          <Image
-            src={ipad1}
-            alt=""
-            class="w-3/4 -right-2 top-1/5 rounded-lg absolute border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-          />
-          <Image
-            src={iphone1}
-            alt=""
-            class="w-64 left-24 -bottom-4 rounded-lg absolute border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1701883421177-178ab9f7035c?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-            class="w-full aspect-video object-cover rounded-lg"
-          />
-        </div>
+        <Image src={hero} alt="Hero" class="w-full aspect-video object-cover rounded-lg mt-20 max-md:hidden" />
+        <Image src={heroMobile} alt="Hero" class="w-full object-cover rounded-lg mt-12 md:hidden" />
       </section>
 
-      <section class="p-4 pt-16 hidden">
-        <h2 class="text-2xl font-medium tracking-tight text-center">
+      <section class="p-4 mt-12 md:mt-32">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">
           Dla kogo jest TreeAgent?
         </h2>
-        <ul class="grid grid-cols-3 gap-4 mt-5.5">
-          {
-            forWho.map(({ title, description, icon: Icon }) => (
-              <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 __border-dashed">
-                <div class="flex items-center gap-1">
-                  <Icon class="__text-green-950/80 size-4" />
-                  <p class="__text-green-950 font-medium">{title}</p>
-                </div>
-                <p class="text-stone-600 mt-2 text-balance border-l-2 pl-2.5 border-stone-300">
-                  {description}
-                </p>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section class="p-4 mt-32">
-        <h2 class="text-4xl font-medium tracking-tight text-center">
-          Dla kogo jest TreeAgent?
-        </h2>
-        <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-16">
+        <ul class="grid grid-flow-row md:grid-cols-3 gap-4 mt-12 md:mt-16">
           {
             forWho.map(({ title, description }) => (
-              <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-8">
+              <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex flex-col justify-between gap-4 bg-lines">
                 <div class="flex items-center gap-1">
-                  <p class="font-medium text-lg leading-tight">{title}</p>
+                  <p class="font-medium text-xl leading-tight text-stone-950">{title}</p>
                 </div>
-                <p class="text-stone-600 mt-2 text-balance border-stone-300">
+                <p class="text-stone-600 mt-1 text-balance border-stone-300 font-[450] md:text-lg">
                   {description}
                 </p>
               </li>
@@ -284,244 +285,139 @@ const faqs = [
         </ul>
       </section>
 
-      <section class="p-4 mt-32">
-        <h2 class="text-4xl font-medium tracking-tight text-center">
-          Czy to brzmi znajomo?
+      <section class="p-4 mt-12 md:mt-32">
+          <small class="text-red-600 font-medium text-sm text-center uppercase block">Problem</small>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 max-w-xl mx-auto">
+          Masz 5 narzędzi, 3 arkusze i dalej nie wiesz, co jest aktualne...
         </h2>
-        <!-- <ul class="flex flex-wrap justify-center gap-4 mt-16">
-          {
-            painPoints.map((painPoint) => (
-              <li class="p-4 rounded-lg h-fit flex flex-col justify-between gap-8 text-red-600 bg-red-200/10 border border-red-200/75">
-                <p class="font-medium leading-tight">{painPoint}</p>
-              </li>
-            ))
-          }
-        </ul> -->
-
-
-           <ul class="flex flex-wrap justify-center gap-4 _max-w-lg mx-auto mt-16">
-         {
-          painPoints.map(({ text, icon: Icon }) => (
-             <li
-            class="bg-red-600/80 border border-red-600 text-red-50 w-fit px-3 py-1.5 rounded-full font-medium text-sm flex items-center gap-1.5"
+        <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
+          {painPoints.map(({ text, icon: Icon }) => (
+            <li
+            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600"
           >
-            <Icon class="size-4" />
-            <span>{text}</span>
+            <span>
+              <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
+            </span>
+            <p class="font-[450] md:text-lg">
+              {text}
+            </p>
           </li>
-          ))
-         }
+          ))}
         </ul>
       </section>
 
-      <section class="p-4 my-32">
-        <h2 class="text-4xl font-medium tracking-tight text-center">
-          Jak <span class="text-orange-600">TreeAgent</span> rozwiązuje te problemy?
+      <section class="p-4 mt-12 md:mt-32">
+          <small class="text-green-600 font-medium text-sm text-center uppercase block">Rozwiązanie</small>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 mx-auto">
+          Jak <span class="text-green-600">TreeAgent</span> rozwiązuje te problemy?
         </h2>
         <p
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto"
+          class="tracking-tight text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
           TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i
           raportowania - stworzone z myślą o realnej pracy w terenie.
         </p>
 
+        <!-- <div class="mt-16 grid gap-12 hidden">
+          {features.map(({microcopy, title, description, image}) => (
+             <div
+            class="max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[2fr_3fr]"
+          >
+            <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12">
+          <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
+              <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
+                {title}
+              </p>
+              <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
+                {description}
+              </p>
+            </div>
+ <Image
+                src={image}
+                alt={title}
+                class="w-full rounded-md"
+              />
+          </div>
+          ))}
+          </div> -->
+
         <div class="mt-16 grid gap-12">
-          <div
-            class="bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[2fr_3fr]"
+          {features.map(({microcopy, title, description, image, mobileImage}) => (
+            <div
+            class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]"
           >
-            <div class="flex flex-col gap-4 p-2 mt-12">
-              <p class="font-medium text-lg leading-tight">
-                Klienci - jasno i bez chaosu
+            <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
+          <small class="text-green-600 font-medium text-sm uppercase text-balance">{microcopy}</small>
+              <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
+                {title}
               </p>
-              <p class="text-stone-600 mt-2 text-balance border-stone-300">
-                Jedno miejsce do zarządzania wszystkimi klientami: firmami,
-                instytucjami i właścicielami prywatnymi. Każdy klient ma swoje
-                projekty, lokalizacje i historię - wszystko czytelne i łatwe do
-                odnalezienia.
+              <p class="text-stone-600 text-balance border-stone-300 font-[450] md:text-lg">
+                {description}
               </p>
             </div>
 
-            <div class="relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1701883419926-7939060d10bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Clients"
-                class="w-full rounded-md"
-              />
-              <div
-                class="grid grid-cols-3 gap-4 absolute w-full -bottom-2 mx-16"
-              >
-                <Image
-                  src={iphoneClientsList}
+          <Image
+                  src={image}
                   alt=""
-                  class="_w-52 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
+                  class="rounded-lg max-sm:hidden"
                 />
                 <Image
-                  src={iphoneClientsDetails}
+                  src={mobileImage}
                   alt=""
-                  class="_w-52 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
+                  class="rounded-lg sm:hidden"
                 />
-                <Image
-                  src={iphoneClientsNew}
-                  alt=""
-                  class="_w-52 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-                />
-              </div>
-            </div>
           </div>
-
-          <div
-            class="bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[3fr_2fr] gap-8"
-          >
-            <div class="flex flex-col gap-4 p-2 mt-12 order-2">
-              <p class="font-medium text-lg leading-tight">
-                Projekty, które odzwierciedlają realną pracę
-              </p>
-              <p class="text-stone-600 mt-2 text-balance border-stone-300">
-                Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace
-                w czasie, wracasz do danych po miesiącach lub latach i masz
-                pełny kontekst bez wertowania plików.
-              </p>
-            </div>
-
-            <div class="relative overflow-hidden order-1">
-              <img
-                src="https://images.unsplash.com/photo-1701883419926-7939060d10bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Clients"
-                class="w-full rounded-md"
-              />
-              <div
-                class="grid grid-cols-3 gap-4 absolute w-full -bottom-2 mx-16"
-              >
-                <Image
-                  src={iphoneProjectsList}
-                  alt=""
-                  class="rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-                />
-                <Image
-                  src={iphoneProjectsDetails}
-                  alt=""
-                  class="rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-                />
-                <Image
-                  src={iphoneProjectsNew}
-                  alt=""
-                  class="rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[2fr_3fr]"
-          >
-            <div class="flex flex-col gap-4 p-2 mt-12">
-              <p class="font-medium text-lg leading-tight">
-                Drzewa dodajesz raz. Potem tylko pracujesz
-              </p>
-              <p class="text-stone-600 mt-2 text-balance border-stone-300">
-                Każde drzewo jest trwałym rekordem w systemie - z lokalizacją,
-                zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania.
-                Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.
-              </p>
-            </div>
-
-            <div class="relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1701883419926-7939060d10bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Clients"
-                class="w-full rounded-md"
-              />
-              <Image
-                src={ipadProjectBerlin}
-                alt=""
-                class="absolute w-4/5 -bottom-2 mx-16 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-              />
-            </div>
-          </div>
-
-          <div
-            class="bg-stone-200/10 p-2 rounded-lg border border-stone-200/75 grid grid-cols-[3fr_2fr] gap-8"
-          >
-            <div class="flex flex-col gap-4 p-2 mt-12 order-2">
-              <p class="font-medium text-lg leading-tight">
-                Mapa, która naprawdę pomaga
-              </p>
-              <p class="text-stone-600 mt-2 text-balance border-stone-300">
-                Drzewa są w terenie, nie w tabelce. <br />Mapa w TreeAgent
-                pozwala pracować wizualnie: szybciej lokalizować drzewa, lepiej
-                rozumieć kontekst i unikać błędów.
-              </p>
-            </div>
-
-            <div class="relative overflow-hidden order-1">
-              <img
-                src="https://images.unsplash.com/photo-1701883419926-7939060d10bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Clients"
-                class="w-full rounded-md"
-              />
-              <Image
-                src={ipadProjectNormalPlots}
-                alt=""
-                class="absolute left-1/5 -translate-x-1/5 top-1/20 w-2/3 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-              />
-              <Image
-                src={ipadProjectSatelitePlots}
-                alt=""
-                class="absolute right-1/5 translate-x-1/5 bottom-1/20 w-2/3 rounded-lg border border-stone-50 bg-stone-200/50 p-0.5 shadow"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section class="p-4 mt-32">
-        <h2 class="text-4xl font-medium tracking-tight text-center">
+      <section class="p-4 mt-12 md:mt-32">
+         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
           Nad czym pracujemy teraz?
         </h2>
         <p
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto"
+          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
           TreeAgent jest ciągle rozwijany i aktualizowany. <br />Pracujemy nad
           nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.
         </p>
-        <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
-          <li
-            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex items-center justify-between gap-8"
+
+
+         <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
+          {upcomingFeatures.map(({ text, icon: Icon }) => (
+             <li
+            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2"
+
           >
-            <p class="flex items-center gap-1">
-              <FileStackIcon class="size-4" /> Raporty gotowe do przekazania klientowi
+            <span>
+              <Icon class="w-4 md:w-5 h-lh opacity-75" /> 
+            </span>
+            <p class="font-[450] md:text-lg">
+              {text}
             </p>
             <div
-              class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-1 rounded-full font-medium text-sm"
+              class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline"
             >
-              Soon
+Soon
             </div>
           </li>
-          <li
-            class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex items-center justify-between gap-8"
-          >
-            <p class="flex items-center gap-1">
-              <MapIcon class="size-4" /> Mapa 3D
-            </p>
-            <div
-              class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-1 rounded-full font-medium text-sm"
-            >
-              Soon
-            </div>
-          </li>
+          ))}
         </ul>
       </section>
 
       <section class="p-4 mt-16 bg-stone-400/10 rounded-lg py-16">
-        <h2 class="text-4xl font-medium tracking-tight text-center">
+           <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance">
           Bądzmy w kontakcie!
         </h2>
         <p
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto"
+          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
           TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco -
           dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy
           funkcje, które w terenie muszą działać po prostu dobrze.
         </p>
+
+        
 
         <div class="my-16">
           <div class="flex items-center gap-2 max-w-md mx-auto">
@@ -537,7 +433,7 @@ const faqs = [
             </button>
           </div>
           <p
-            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto"
+            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
           >
             Zero śmieci. Tylko rzeczy, które mają znaczenie.
           </p>
@@ -549,32 +445,26 @@ const faqs = [
           Co dostaniesz?
         </h3>
 
-        <ul class="flex flex-wrap justify-center gap-2 mt-4 max-w-lg mx-auto">
-          <li
-            class="bg-yellow-600/80 border border-yellow-600 text-yellow-50 w-fit px-3 py-1.5 rounded-full font-medium text-sm flex items-center gap-1.5"
-          >
-            <BellRingIcon class="size-4" />
-            <span>Powiadomienia o nowiutkich funkcjach</span>
+        <ul class="grid md:flex flex-wrap justify-center gap-2 mt-4 mx-auto">
+          <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+            <BellRingIcon class="size-4 h-lh opacity-75" />
+            <span class="font-[450]">Powiadomienia o nowiutkich funkcjach</span>
           </li>
-          <li
-            class="bg-yellow-600/80 border border-yellow-600 text-yellow-50 w-fit px-3 py-1.5 rounded-full font-medium text-sm flex items-center gap-1.5"
-          >
-            <BugOffIcon class="size-4" />
-            <span>Ważne poprawki i zmiany, które wpływają na Twoją pracę</span>
+           <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+            <BugOffIcon class="size-4 h-lh opacity-75" />
+            <span class="font-[450]">Ważne poprawki i zmiany, które wpływają na Twoją pracę</span>
           </li>
-          <li
-            class="bg-yellow-600/80 border border-yellow-600 text-yellow-50 w-fit px-3 py-1.5 rounded-full font-medium text-sm flex items-center gap-1.5"
-          >
-            <CircleFadingArrowUpIcon class="size-4" />
-            <span>Krótkie aktualizacje bez spamu i marketingowych epopei</span>
+           <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+            <CircleFadingArrowUpIcon class="size-4 h-lh opacity-75" />
+            <span class="font-[450]">Krótkie aktualizacje bez spamu i marketingowych epopei</span>
           </li>
         </ul>
       </section>
 
-      <section class="p-4 mt-32">
-        <h2 class="text-4xl font-medium tracking-tight text-center">FAQ</h2>
+      <section class="p-4 mt-12 md:mt-32">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center">FAQ</h2>
         <p 
-          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto"
+          class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
         >
           Najczęściej zadawane pytania o TreeAgent
         </p>
@@ -623,7 +513,7 @@ const faqs = [
                   :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
                 >
                   <div class="overflow-hidden">
-                    <p class="pb-3 tracking-tight text-stone-600 text-balance">
+                    <p class="pb-3 tracking-tight text-stone-600 text-balance font-[450] md:text-lg">
                       {faq.answer}
                     </p>
                   </div>
@@ -636,7 +526,7 @@ const faqs = [
 
       <footer class="overflow-hidden pt-24 border-t border-stone-200/75">
         <p
-          class="translate-y-1/5 text-center font-bold text-stone-600/10 text-9xl"
+          class="translate-y-1/5 text-center font-bold text-stone-600/10 text-6xl md:text-9xl"
         >
           TreeAgent
         </p>
