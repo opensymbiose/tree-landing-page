@@ -1,6 +1,6 @@
 ---
-title: 'Bądzmy w kontakcie!'
-description: 'TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.'
+title: 'Bądźmy w kontakcie!'
+description: 'TreeAgent jako aplikacja do inspekcji drzew rośnie razem z nimi - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.'
 placeholder: 'Twój email'
 cta: 'Zapisz się'
 note: 'Zero śmieci. Tylko rzeczy, które mają znaczenie.'

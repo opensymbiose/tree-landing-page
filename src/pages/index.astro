@@ -319,7 +319,7 @@ const faqSection = {
               >{heroSection.microcopy}</small
             >
             <h1
-              class="text-3xl md:text-5xl lg:text-6xl lg:max-w-3xl lg:leading-16 md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-2xl"
+              class="text-3xl md:text-5xl lg:text-6xl lg:max-w-3xl lg:leading-16 md:leading-14 font-medium  text-balance mt-2 max-w-2xl tracking-tight"
             >
               {heroSection.title}
             </h1>
@@ -351,7 +351,7 @@ const faqSection = {
 
         <section id="dla-kogo" class="p-4 mt-12 md:mt-32 scroll-mt-20">
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center"
+            class="text-3xl md:text-4xl font-medium  text-center tracking-tight"
           >
             {forWhoSection.title}
           </h2>
@@ -379,7 +379,7 @@ const faqSection = {
             >{problemSection.microcopy}</small
           >
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 max-w-xl mx-auto"
+            class="text-3xl md:text-4xl font-medium  text-center text-balance mt-2 max-w-xl mx-auto tracking-tight"
           >
             {problemSection.title}
           </h2>
@@ -403,14 +403,14 @@ const faqSection = {
             >{solutionSection.microcopy}</small
           >
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance mt-2 mx-auto"
+            class="text-3xl md:text-4xl font-medium  text-center text-balance mt-2 mx-auto tracking-tight"
           >
             {solutionSection.title.split('TreeAgent')[0]}<span
               class="text-green-600">TreeAgent</span
             >{solutionSection.title.split('TreeAgent')[1]}
           </h2>
           <p
-            class="tracking-tight text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+            class=" text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
           >
             {solutionSection.description}
           </p>
@@ -447,12 +447,12 @@ const faqSection = {
 
         <section class="p-4 mt-12 md:mt-32">
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance"
+            class="text-3xl md:text-4xl font-medium  text-center text-balance tracking-tight"
           >
             {upcomingSection.title}
           </h2>
           <p
-            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+            class=" text-stone-600 mt-4 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
           >
             {upcomingSection.description}
           </p>
@@ -460,12 +460,12 @@ const faqSection = {
           <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
             {
               upcomingSection.items.map(({ text, icon: Icon }) => (
-                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2">
+                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 md:text-lg">
                   <span>
                     <Icon class="w-4 md:w-5 h-lh opacity-75" />
                   </span>
-                  <p class="font-[450] md:text-lg">{text}</p>
-                  <div class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto max-md:text-sm self-baseline">
+                  <p class="font-[450]">{text}</p>
+                  <div class="bg-green-600/80 border border-green-600 text-green-50 w-fit px-3 py-0.5 rounded-full ml-auto text-sm self-baseline">
                     {upcomingSection.badge}
                   </div>
                 </li>
@@ -479,12 +479,12 @@ const faqSection = {
           class="p-4 mt-16 bg-stone-400/10 rounded-lg py-16"
         >
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center text-balance"
+            class="text-3xl md:text-4xl font-medium  text-center text-balance tracking-tight"
           >
             {newsletterSection.title}
           </h2>
           <p
-            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+            class=" text-stone-600 mt-4 text-center text-balance max-w-4xl mx-auto font-[450] text-lg"
           >
             {newsletterSection.description}
           </p>
@@ -503,14 +503,14 @@ const faqSection = {
               </button>
             </div>
             <p
-              class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
+              class=" text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450]"
             >
               {newsletterSection.note}
             </p>
           </div>
 
           <h3
-            class="tracking-tight text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"
+            class=" text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"
           >
             {newsletterSection.benefitsTitle}
           </h3>
@@ -518,7 +518,7 @@ const faqSection = {
           <ul class="grid md:flex flex-wrap justify-center gap-2 mt-4 mx-auto">
             {
               newsletterSection.benefits.map(({ text, icon: Icon }) => (
-                <li class="text-yellow-600 px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
+                <li class="px-3 py-2 bg-white grid grid-cols-[auto_1fr] gap-2 rounded-lg border border-stone-200">
                   <Icon class="size-4 h-lh opacity-75" />
                   <span class="font-[450]">{text}</span>
                 </li>
@@ -529,12 +529,12 @@ const faqSection = {
 
         <section id="faq" class="p-4 mt-12 md:mt-32 scroll-mt-20">
           <h2
-            class="text-3xl md:text-4xl font-medium tracking-tight text-center"
+            class="text-3xl md:text-4xl font-medium  text-center tracking-tight"
           >
             {faqSection.title}
           </h2>
           <p
-            class="tracking-tight text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
+            class=" text-stone-600 mt-3 text-center text-balance max-w-[64ch] mx-auto font-[450] text-lg"
           >
             {faqSection.description}
           </p>
@@ -548,7 +548,7 @@ const faqSection = {
                     <button
                       id={`faqs-title-${index}`}
                       type="button"
-                      class="faq-toggle flex items-center justify-between w-full text-left tracking-tight text-xl font-medium py-2"
+                      class="faq-toggle flex items-center justify-between w-full text-left  text-xl font-medium py-2"
                       aria-expanded="false"
                       aria-controls={`faqs-text-${index}`}
                     >
@@ -583,7 +583,7 @@ const faqSection = {
                     class="faq-content grid overflow-hidden transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
                   >
                     <div class="overflow-hidden">
-                      <p class="pb-3 tracking-tight text-stone-600 text-balance font-[450] md:text-lg">
+                      <p class="pb-3  text-stone-600 text-balance font-[450] md:text-lg">
                         {faq.answer}
                       </p>
                     </div>
