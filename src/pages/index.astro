@@ -237,11 +237,13 @@ const faqSection = {
       })}
     />
   </head>
-  <body class="bg-stone-50 text-stone-800 antialiased">
+  <body class="bg-stone-50 text-stone-800 antialiased" id="">
     <main class="">
-      <header class="p-4 sticky top-0 z-50 bg-stone-50/80 backdrop-blur-sm">
-        <div class="flex items-center justify-between max-w-7xl w-full mx-auto">
-          <a href="/"
+      <header class="py-4 sticky top-0 z-50 bg-stone-50/80 backdrop-blur-sm">
+        <div
+          class="flex items-center justify-between max-w-7xl w-full mx-auto px-6 md:px-10"
+        >
+          <a href="#"
             ><Image
               src={logo}
               alt="TreeAgent - system do inspekcji drzew"
@@ -317,12 +319,12 @@ const faqSection = {
               >{heroSection.microcopy}</small
             >
             <h1
-              class="text-3xl md:text-5xl md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-2xl"
+              class="text-3xl md:text-5xl lg:text-6xl lg:max-w-3xl lg:leading-16 md:leading-14 font-medium tracking-tight text-balance mt-2 max-w-2xl"
             >
               {heroSection.title}
             </h1>
             <p
-              class="font-[450] text-stone-600 text-lg max-w-lg md:max-w-2xl text-balance mt-4"
+              class="font-[450] text-stone-600 leading-6 text-lg max-w-lg md:max-w-2xl text-balance mt-4"
             >
               {heroSection.description}
             </p>
@@ -362,7 +364,7 @@ const faqSection = {
                       {title}
                     </p>
                   </div>
-                  <p class="text-stone-600 mt-1 text-balance border-stone-300 font-[450] md:text-lg">
+                  <p class="text-stone-600 mt-1 border-stone-300 font-[450] md:text-lg md:text-balance">
                     {description}
                   </p>
                 </li>
@@ -384,11 +386,11 @@ const faqSection = {
           <ul class="flex flex-col gap-4 mt-16 max-w-lg mx-auto">
             {
               problemSection.items.map(({ text, icon: Icon }) => (
-                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600">
+                <li class="bg-stone-200/10 p-4 rounded-lg border border-stone-200/75 flex gap-2 text-red-600 md:text-lg">
                   <span>
                     <Icon class="w-4 md:w-5 h-lh opacity-75" />
                   </span>
-                  <p class="font-[450] md:text-lg">{text}</p>
+                  <p class="font-[450]">{text}</p>
                 </li>
               ))
             }
@@ -418,10 +420,7 @@ const faqSection = {
               solutionSection.features.map(
                 ({ microcopy, title, description, image, mobileImage }) => (
                   <div class="group max-md:flex max-md:flex-col-reverse bg-stone-200/10 p-2 rounded-lg border md:gap-8 border-stone-200/75 grid md:grid-cols-[2fr_3fr] md:even:grid-cols-[3fr_2fr]">
-                    <div class="flex flex-col gap-4 p-2 mt-4 md:mt-12 md:group-even:order-2">
-                      <small class="text-green-600 font-medium text-sm uppercase text-balance">
-                        {microcopy}
-                      </small>
+                    <div class="flex flex-col gap-4 p-2 mt-4 px-4 md:mt-8 md:group-even:order-2">
                       <p class="font-medium text-2xl leading-tight text-stone-950 text-balance">
                         {title}
                       </p>
