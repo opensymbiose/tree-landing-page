@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
 import clientsMobile from "../assets/clients-mobile.png";
 import clients from "../assets/clients.png";
 import heroMobile from "../assets/hero-mobile.png";
@@ -31,231 +32,133 @@ import {
 } from "@lucide/astro";
 
 // ============================================================================
-// CONTENT / TEXTS
+// CONTENT FROM MARKDOWN FILES
 // ============================================================================
 
-const siteUrl = "https://tree-agent.netlify.app/"; // TODO: update with actual URL
+// Icon mappings (icons can't be stored in markdown)
+const iconMap = {
+  UserRoundIcon,
+  Building2Icon,
+  TreesIcon,
+  ClockIcon,
+  MapIcon,
+  FileStackIcon,
+  HistoryIcon,
+  Settings2Icon,
+  BellRingIcon,
+  BugOffIcon,
+  CircleFadingArrowUpIcon,
+} as const;
 
+// Image mappings (images can't be stored in markdown)
+const imageMap = {
+  clients,
+  clientsMobile,
+  projects,
+  projectsMobile,
+  trees,
+  treesMobile,
+  map,
+  mapMobile,
+} as const;
+
+// Load content from markdown files
+const siteEntry = await getEntry("meta", "site");
+const heroEntry = await getEntry("sections", "hero");
+const forWhoEntry = await getEntry("sections", "for-who");
+const problemEntry = await getEntry("sections", "problem");
+const solutionEntry = await getEntry("sections", "solution");
+const upcomingEntry = await getEntry("sections", "upcoming");
+const newsletterEntry = await getEntry("sections", "newsletter");
+const faqEntry = await getEntry("sections", "faq");
+
+// Site metadata and navigation
+const siteUrl = siteEntry!.data.siteUrl;
 const meta = {
-  title: "TreeAgent – System do inspekcji i inwentaryzacji drzew",
-  description:
-    "Profesjonalna aplikacja do inspekcji drzew, inwentaryzacji zieleni i raportowania. Jedno narzędzie dla arborystów, inspektorów i zarządców terenów zielonych.",
-  ogImage: "/og-image.png",
-  keywords:
-    "inspekcja drzew, inwentaryzacja drzew, arborystyka, zarządzanie zielenią, oprogramowanie dla arborystów, monitoring drzew, dendrologia",
+  title: siteEntry!.data.title,
+  description: siteEntry!.data.description,
+  ogImage: siteEntry!.data.ogImage,
+  keywords: siteEntry!.data.keywords,
 };
+const nav = siteEntry!.data.nav;
+const footer = siteEntry!.data.footer;
 
-const nav = {
-  items: [
-    { label: "Dla kogo", href: "#dla-kogo" },
-    { label: "Funkcje", href: "#funkcje" },
-    { label: "FAQ", href: "#faq" },
-  ],
-  signup: "Dołącz",
-};
-
+// Hero section
 const heroSection = {
-  microcopy: "Dla nowoczesnych profesjonalistów",
-  title: "Prosty system do zarządzania inspekcjami drzew.",
-  description:
-    "Kontroluj, śledź i dokumentuj drzewa w jednym inteligentnym systemie, który wspiera realną pracę w terenie i długoterminowe decyzje.",
-  cta: "Poznaj TreeAgent",
-  imageAlt:
-    "Interfejs aplikacji TreeAgent pokazujący mapę z drzewami i panel inspekcji",
+  microcopy: heroEntry!.data.microcopy!,
+  title: heroEntry!.data.title!,
+  description: heroEntry!.data.description!,
+  cta: heroEntry!.data.cta!,
+  imageAlt: heroEntry!.data.imageAlt!,
 };
 
+// For who section - map icons
 const forWhoSection = {
-  title: "Dla kogo jest TreeAgent?",
-  items: [
-    {
-      title: "Inspektorzy i arborzyści",
-      description: "Szybkie inspekcje drzew i pełna historia każdej pozycji.",
-      icon: UserRoundIcon,
-    },
-    {
-      title: "Jednostki samorządowe i zarządcy terenów",
-      description: "Łatwe raportowanie i zarządzanie zielenią miejską.",
-      icon: Building2Icon,
-    },
-    {
-      title: "Organizacje i instytucje dbające o zieleń",
-      description:
-        "Uporządkowana dokumentacja i bieżąca kontrola stanu zieleni.",
-      icon: TreesIcon,
-    },
-  ],
+  title: forWhoEntry!.data.title,
+  items: forWhoEntry!.data.items!.map((item) => ({
+    title: item.title,
+    description: item.description,
+    icon: iconMap[item.icon as keyof typeof iconMap],
+  })),
 };
 
+// Problem section - map icons
 const problemSection = {
-  microcopy: "Problem",
-  title: "Masz 5 narzędzi, 3 arkusze i dalej nie wiesz, co jest aktualne...",
-  items: [
-    {
-      text: "Tracisz czas na powtarzające się inspekcje",
-      icon: ClockIcon,
-    },
-    {
-      text: "Zbyt skomplikowane systemy GIS",
-      icon: MapIcon,
-    },
-    {
-      text: "Dokumentacja jest rozproszona i trudna do raportowania",
-      icon: FileStackIcon,
-    },
-    {
-      text: "Brak historii drzew utrudnia decyzje projektowe i inwestycyjne",
-      icon: HistoryIcon,
-    },
-    {
-      text: "Brak logiki dopasowanej do branży",
-      icon: Settings2Icon,
-    },
-  ],
+  microcopy: problemEntry!.data.microcopy,
+  title: problemEntry!.data.title,
+  items: problemEntry!.data.items!.map((item) => ({
+    text: item.text,
+    icon: iconMap[item.icon as keyof typeof iconMap],
+  })),
 };
 
+// Solution section - map images
 const solutionSection = {
-  microcopy: "Rozwiązanie",
-  title: "Jak TreeAgent rozwiązuje te problemy?",
-  description:
-    "TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.",
-  features: [
-    {
-      microcopy: "Jedno miejsce zamiast rozproszonych informacji",
-      title: "Klienci - jasno i bez chaosu",
-      description:
-        "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.",
-      mobileImage: clientsMobile,
-      image: clients,
-    },
-    {
-      microcopy: "Porządek dopasowany do przebiegu prac",
-      title: "Projekty, które odzwierciedlają realną pracę.",
-      description:
-        "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.",
-      mobileImage: projectsMobile,
-      image: projects,
-    },
-    {
-      microcopy: "Te same obiekty, kolejne działania",
-      title: "Drzewa dodajesz raz. Potem tylko pracujesz.",
-      description:
-        "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, zdjęciami, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.",
-      mobileImage: treesMobile,
-      image: trees,
-    },
-    {
-      microcopy: "Przestrzeń zamiast listy punktów",
-      title: "Mapa, która naprawdę pomaga.",
-      description:
-        "Drzewa są w terenie, nie w tabelce. Mapa w TreeAgent to narzędzie do zarządzania drzewami, które naprawdę pomaga w pracy w terenie.",
-      mobileImage: mapMobile,
-      image: map,
-    },
-  ],
+  microcopy: solutionEntry!.data.microcopy!,
+  title: solutionEntry!.data.title!,
+  description: solutionEntry!.data.description!,
+  features: solutionEntry!.data.features!.map((feature) => ({
+    microcopy: feature.microcopy,
+    title: feature.title,
+    description: feature.description,
+    image: imageMap[feature.image as keyof typeof imageMap],
+    mobileImage: imageMap[feature.mobileImage as keyof typeof imageMap],
+  })),
 };
 
+// Upcoming section - map icons
 const upcomingSection = {
-  title: "Nad czym pracujemy teraz?",
-  description:
-    "TreeAgent jest ciągle rozwijany i aktualizowany. Pracujemy nad nowymi funkcjami i ulepszeniami, które ułatwią Ci pracę.",
-  badge: "Wkrótce",
-  items: [
-    {
-      text: "Raporty gotowe do przekazania klientowi",
-      icon: FileStackIcon,
-    },
-    {
-      text: "Mapa 3D",
-      icon: MapIcon,
-    },
-  ],
+  title: upcomingEntry!.data.title,
+  description: upcomingEntry!.data.description,
+  badge: upcomingEntry!.data.badge,
+  items: upcomingEntry!.data.items!.map((item) => ({
+    text: item.text,
+    icon: iconMap[item.icon as keyof typeof iconMap],
+  })),
 };
 
+// Newsletter section - map icons
 const newsletterSection = {
-  title: "Bądzmy w kontakcie!",
-  description:
-    "TreeAgent jako aplikacja do inspekcji drzew rozwija się na bieżąco - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.",
-  placeholder: "Twój email",
-  cta: "Zapisz się",
-  note: "Zero śmieci. Tylko rzeczy, które mają znaczenie.",
-  benefitsTitle: "Co dostaniesz?",
-  benefits: [
-    {
-      text: "Powiadomienia o nowiutkich funkcjach",
-      icon: BellRingIcon,
-    },
-    {
-      text: "Ważne poprawki i zmiany, które wpływają na Twoją pracę",
-      icon: BugOffIcon,
-    },
-    {
-      text: "Krótkie aktualizacje bez spamu i marketingowych epopei",
-      icon: CircleFadingArrowUpIcon,
-    },
-  ],
+  title: newsletterEntry!.data.title,
+  description: newsletterEntry!.data.description,
+  placeholder: newsletterEntry!.data.placeholder,
+  cta: newsletterEntry!.data.cta,
+  note: newsletterEntry!.data.note,
+  benefitsTitle: newsletterEntry!.data.benefitsTitle,
+  benefits: newsletterEntry!.data.benefits!.map((benefit) => ({
+    text: benefit.text,
+    icon: iconMap[benefit.icon as keyof typeof iconMap],
+  })),
 };
 
+// FAQ section
 const faqSection = {
-  title: "FAQ",
-  description: "Najczęściej zadawane pytania o TreeAgent",
-  items: [
-    {
-      question: "Co to jest TreeAgent?",
-      answer:
-        "TreeAgent to profesjonalna aplikacja do inspekcji drzew i inwentaryzacji zieleni, która pozwala zarządzać danymi, inspekcjami i raportami w jednym spójnym systemie. Narzędzie wspiera arborystów i specjalistów środowiskowych - od zarządzania klientami, przez pracę w terenie, aż po gotową dokumentację.",
-    },
-    {
-      question: "Dla kogo został zaprojektowany TreeAgent?",
-      answer:
-        "TreeAgent został stworzony z myślą o opiekunach drzew - arborystach, dendrologach, inspektorach drzew, architektach budowlanych i krajobrazu, konsultantach, urzędach i ich pracownikach. To także narzędzie dla całych organizacji zajmujących się zarządzaniem drzewami - zarówno w sektorze publicznym, jak i prywatnym. Sprawdzi się wszędzie tam, gdzie potrzebne jest uporządkowane oprogramowanie do inwentaryzacji i monitoringu drzew.",
-    },
-    {
-      question: "Czy muszę dodawać to samo drzewo przy każdej inspekcji?",
-      answer:
-        "Nie. Każde drzewo dodajesz do systemu tylko raz. Później wracasz do niego przy kolejnych inspekcjach, aktualizacjach lub długoterminowym monitoringu. Dzięki temu dane drzew są spójne, a historia inspekcji zachowana bez powielania informacji.",
-    },
-    {
-      question: "Czy mogę przerwać inspekcję i wrócić do niej później?",
-      answer:
-        "Tak. Inspekcje w TreeAgent możesz tworzyć stopniowo - zapisać je w trakcie i wrócić w dowolnym momencie. To szczególnie ważne w pracy terenowej, gdzie inspekcje drzew często rozciągają się na kilka wizyt.",
-    },
-    {
-      question: "Jak działa zarządzanie projektami w TreeAgent?",
-      answer:
-        "Projekty pozwalają grupować drzewa i inspekcje w jednym kontekście - np. według lokalizacji, klienta lub umowy. Dzięki temu zarządzanie inwentaryzacją drzew jest czytelne, a praca uporządkowana nawet przy dużej liczbie danych.",
-    },
-    {
-      question: "Czy TreeAgent nadaje się do pracy w terenie?",
-      answer:
-        "Zdecydowanie tak. TreeAgent został zaprojektowany wokół realnych scenariuszy pracy w terenie. Umożliwia elastyczne wprowadzanie danych, częściowe uzupełnianie inspekcji i płynne kontynuowanie pracy między kolejnymi wizytami na miejscu.",
-    },
-    {
-      question: "Czy mogę generować raporty bezpośrednio z inspekcji?",
-      answer:
-        "Tak. TreeAgent automatycznie przekształca dane z inspekcji w czytelne, profesjonalne raporty z inspekcji drzew, gotowe do przekazania klientowi lub interesariuszom - bez ręcznego składania dokumentów.",
-    },
-    {
-      question: "Co dzieje się z danymi, gdy tworzę nową inspekcję?",
-      answer:
-        "Wszystkie istniejące dane drzew pozostają nienaruszone. Nowa inspekcja bazuje na wcześniejszych zapisach, dzięki czemu zachowujesz ciągłość informacji i pełny kontekst historyczny, bez nadpisywania wcześniejszych ocen.",
-    },
-    {
-      question:
-        "Czy TreeAgent nadaje się do długoterminowego monitoringu drzew?",
-      answer:
-        "Tak. TreeAgent został zaprojektowany jako narzędzie do długoterminowego monitoringu drzew, umożliwiające śledzenie zmian, ryzyk i zaleceń w czasie - od pierwszej inspekcji po kolejne lata obserwacji.",
-    },
-    {
-      question:
-        "Czy do korzystania z TreeAgent potrzebna jest zaawansowana wiedza technologiczna?",
-      answer:
-        "Nie. TreeAgent stawia na prostotę używania i intuicyjność, które znacząco ułatwiają pracę profesjonalistom. Interfejs narzędzia został zaprojektowany tak, abyś mógł skupić się na ocenie drzew i podejmowaniu decyzji, a nie na nauce obsługi skomplikowanego oprogramowania.",
-    },
-  ],
-};
-
-const footer = {
-  brand: "TreeAgent",
+  title: faqEntry!.data.title,
+  description: faqEntry!.data.description,
+  items: faqEntry!.data.faqItems!.map((item) => ({
+    question: item.question,
+    answer: item.answer,
+  })),
 };
 ---
 
@@ -758,13 +661,6 @@ const footer = {
             mobileMenuToggle?.setAttribute("aria-expanded", "false");
           }
         });
-
-        // Close on click outside
-        // mobileMenu?.addEventListener("click", (e) => {
-        //   if (e.target === mobileMenu) {
-        //     closeMobileMenu();
-        //   }
-        // });
 
         // FAQ accordion
         const faqToggles = document.querySelectorAll(".faq-toggle");
