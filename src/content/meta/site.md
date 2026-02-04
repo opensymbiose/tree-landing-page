@@ -6,13 +6,13 @@ ogImage: '/og-image.png'
 keywords: 'inspekcja drzew, inwentaryzacja drzew, arborystyka, zarządzanie zielenią, oprogramowanie dla arborystów, monitoring drzew, dendrologia'
 nav:
   items:
-    - label: "Dla kogo"
-      href: "#dla-kogo"
-    - label: "Funkcje"
-      href: "#funkcje"
-    - label: "FAQ"
-      href: "#faq"
-  signup: "Newsletter"
+    - label: 'Dla kogo'
+      href: '#dla-kogo'
+    - label: 'Funkcje'
+      href: '#funkcje'
+    - label: 'FAQ'
+      href: '#faq'
+  signup: 'Newsletter'
 footer:
   brand: 'TreeAgent'
 ---

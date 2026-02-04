@@ -3,24 +3,24 @@ microcopy: 'Rozwiązanie'
 title: 'Jak TreeAgent rozwiązuje te problemy?'
 description: 'TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.'
 features:
-  - microcopy: "Jedno miejsce zamiast rozproszonych informacji"
-    title: "Klienci - jasno i bez chaosu"
-    description: "Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia."
-    mobileImage: "clientsMobile"
-    image: "clients"
-  - microcopy: "Porządek dopasowany do przebiegu prac"
-    title: "Projekty, które odzwierciedlają Twoją pracę"
-    description: "Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików."
-    mobileImage: "projectsMobile"
-    image: "projects"
-  - microcopy: "Te same obiekty, kolejne działania"
-    title: "Drzewa dodajesz raz. Potem tylko pracujesz"
-    description: "Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie."
-    mobileImage: "treesMobile"
-    image: "trees"
-  - microcopy: "Przestrzeń zamiast listy punktów"
-    title: "Maksymalnie użyteczna mapa"
-    description: "Funkcjonalności dopasowane do terenu. Mapa w TreeAgent pozwala pracować wizualnie: szybciej lokalizować drzewa, lepiej rozumieć kontekst i unikać błędów."
-    mobileImage: "mapMobile"
-    image: "map"
+  - microcopy: 'Jedno miejsce zamiast rozproszonych informacji'
+    title: 'Klienci - jasno i bez chaosu'
+    description: 'Jedno miejsce do zarządzania wszystkimi klientami: firmami, instytucjami i właścicielami prywatnymi. Każdy klient ma swoje projekty, lokalizacje i historię - wszystko czytelne i łatwe do odnalezienia.'
+    mobileImage: 'clientsMobile'
+    image: 'clients'
+  - microcopy: 'Porządek dopasowany do przebiegu prac'
+    title: 'Projekty, które odzwierciedlają Twoją pracę'
+    description: 'Drzewa i inspekcje grupujesz w logiczne projekty. Śledzisz prace w czasie, wracasz do danych po miesiącach lub latach i masz pełny kontekst bez wertowania plików.'
+    mobileImage: 'projectsMobile'
+    image: 'projects'
+  - microcopy: 'Te same obiekty, kolejne działania'
+    title: 'Drzewa dodajesz raz. Potem tylko pracujesz'
+    description: 'Każde drzewo jest trwałym rekordem w systemie - z lokalizacją, historią i kolejnymi inspekcjami. Mniej powtarzania. Więcej ciągłości. Lepsza kontrola nad stanem drzew w czasie.'
+    mobileImage: 'treesMobile'
+    image: 'trees'
+  - microcopy: 'Przestrzeń zamiast listy punktów'
+    title: 'Maksymalnie użyteczna mapa'
+    description: 'Funkcjonalności dopasowane do terenu. Mapa w TreeAgent pozwala pracować wizualnie: szybciej lokalizować drzewa, lepiej rozumieć kontekst i unikać błędów.'
+    mobileImage: 'mapMobile'
+    image: 'map'
 ---
