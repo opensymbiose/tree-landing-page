@@ -141,7 +141,9 @@ const upcomingSection = {
 const newsletterSection = {
   title: newsletterEntry!.data.title,
   description: newsletterEntry!.data.description,
-  placeholder: newsletterEntry!.data.placeholder,
+  namePlaceholder: newsletterEntry!.data.namePlaceholder,
+  emailPlaceholder: newsletterEntry!.data.emailPlaceholder,
+  professionPlaceholder: newsletterEntry!.data.professionPlaceholder,
   cta: newsletterEntry!.data.cta,
   note: newsletterEntry!.data.note,
   benefitsTitle: newsletterEntry!.data.benefitsTitle,
@@ -526,7 +528,7 @@ const faqSection = {
             {newsletterSection.description}
           </p>
 
-          <div class="my-16">
+          <!-- <div class="my-16">
             <div class="flex items-center gap-2 max-w-md mx-auto">
               <input
                 type="email"
@@ -544,7 +546,81 @@ const faqSection = {
             >
               {newsletterSection.note}
             </p>
-          </div>
+          </div> -->
+
+           <form class="my-12 md:my-16 max-w-sm mx-auto">
+            <fieldset class="flex flex-col gap-3">
+              <div class="relative">
+                <input
+                  type="text"
+                  name="name"
+                  id="newsletter-name"
+                  placeholder=" "
+                  required
+                  class="peer w-full pt-5 pb-2 px-4 rounded-xl border border-stone-200 bg-white/90 backdrop-blur-sm text-stone-900 font-medium placeholder-transparent outline-none transition-all duration-200 focus:border-stone-400 focus:ring-2 focus:ring-stone-200"
+                />
+                <label
+                  for="newsletter-name"
+                  class="pointer-events-none font-medium absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 transition-all duration-200 peer-focus:top-3 peer-focus:text-xs peer-focus:text-stone-500 peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-stone-500"
+                >
+                  {newsletterSection.namePlaceholder}
+                </label>
+              </div>
+
+              <div class="relative">
+                <input
+                  type="email"
+                  name="email"
+                  id="newsletter-email"
+                  placeholder=" "
+                  required
+                  class="peer w-full pt-5 pb-2 px-4 rounded-xl border border-stone-200 bg-white/90 backdrop-blur-sm text-stone-900 font-medium placeholder-transparent outline-none transition-all duration-200 focus:border-stone-400 focus:ring-2 focus:ring-stone-200"
+                />
+                <label
+                  for="newsletter-email"
+                  class="pointer-events-none font-medium absolute left-4 top-1/2 -translate-y-1/2 text-stone-400  transition-all duration-200 peer-focus:top-3 peer-focus:text-xs peer-focus:text-stone-500 peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-stone-500"
+                >
+                  {newsletterSection.emailPlaceholder}
+                </label>
+              </div>
+
+              <div class="relative">
+                <select
+                  name="profession"
+                  id="newsletter-profession"
+                  required
+                  class="w-full py-3.5 px-4 rounded-xl border border-stone-200 bg-white/90 backdrop-blur-sm text-stone-900 font-medium outline-none appearance-none transition-all duration-200 focus:border-stone-400 focus:ring-2 focus:ring-stone-200 invalid:text-stone-400"
+                  aria-label={newsletterSection.professionPlaceholder}
+                >
+                  <option value="" selected>{newsletterSection.professionPlaceholder}</option>
+                  <option value="Dendrologia">Dendrologia</option>
+                  <option value="Arborystyka">Arborystyka</option>
+                  <option value="Inspektor nadzoru zieleni">Inspektor nadzoru zieleni</option>
+                  <option value="Architekt budowlany">Architekt budowlany</option>
+                  <option value="Konsultant">Konsultant</option>
+                  <option value="Urzędnik">Urzędnik</option>
+                  <option value="Administracja publiczna">Administracja publiczna</option>
+                  <option value="Inne">Inne</option>
+                </select>
+                <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-stone-400" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+
+              <button
+                type="submit"
+                class="mt-2 w-full bg-stone-900 hover:bg-stone-800 active:scale-[0.98] cursor-pointer text-white font-medium py-3 px-6 rounded-xl transition-all duration-200"
+              >
+                {newsletterSection.cta}
+              </button>
+            </fieldset>
+
+            <p
+              class="text-stone-400 mt-4 text-center"
+            >
+              {newsletterSection.note}
+            </p>
+          </form>
 
           <h3
             class="text-xl font-medium text-center text-balance max-w-[64ch] mx-auto"

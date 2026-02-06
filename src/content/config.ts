@@ -35,7 +35,9 @@ const sectionsCollection = defineCollection({
     // Upcoming badge
     badge: z.string().optional(),
     // Newsletter specific
-    placeholder: z.string().optional(),
+    namePlaceholder: z.string().optional(),
+    emailPlaceholder: z.string().optional(),
+    professionPlaceholder: z.string().optional(),
     note: z.string().optional(),
     benefitsTitle: z.string().optional(),
     benefits: z
