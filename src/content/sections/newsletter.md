@@ -6,6 +6,7 @@ emailPlaceholder: 'Twój email*'
 professionPlaceholder: 'Wybierz swoją profesję (opcjonalne)'
 cta: 'Zapisz się'
 note: 'Zero śmieci. Tylko rzeczy, które mają znaczenie.'
+privacyLabel: 'Zapoznałem/am się z [polityką prywatności](/polityka-prywatnosci.pdf).'
 benefitsTitle: 'Co dostaniesz?'
 benefits:
   - text: 'Powiadomienia o nowiutkich funkcjach'

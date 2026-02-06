@@ -39,6 +39,7 @@ const sectionsCollection = defineCollection({
     emailPlaceholder: z.string().optional(),
     professionPlaceholder: z.string().optional(),
     note: z.string().optional(),
+    privacyLabel: z.string().optional(),
     benefitsTitle: z.string().optional(),
     benefits: z
       .array(

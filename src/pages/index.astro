@@ -146,6 +146,7 @@ const newsletterSection = {
   professionPlaceholder: newsletterEntry!.data.professionPlaceholder,
   cta: newsletterEntry!.data.cta,
   note: newsletterEntry!.data.note,
+  privacyLabel: newsletterEntry!.data.privacyLabel,
   benefitsTitle: newsletterEntry!.data.benefitsTitle,
   benefits: newsletterEntry!.data.benefits!.map((benefit) => ({
     text: benefit.text,
@@ -588,24 +589,39 @@ const faqSection = {
                 <select
                   name="profession"
                   id="newsletter-profession"
-                  required
-                  class="w-full py-3.5 px-4 rounded-xl border border-stone-200 bg-white/90 backdrop-blur-sm text-stone-900 font-medium outline-none appearance-none transition-all duration-200 focus:border-stone-400 focus:ring-2 focus:ring-stone-200 invalid:text-stone-400"
+                  class="w-full py-3.5 px-4 rounded-xl border border-stone-200 bg-white/90 backdrop-blur-sm text-stone-400 font-medium outline-none appearance-none transition-all duration-200 focus:border-stone-400 focus:ring-2 focus:ring-stone-200"
                   aria-label={newsletterSection.professionPlaceholder}
+                  onchange="this.classList.toggle('text-stone-900', this.value !== ''); this.classList.toggle('text-stone-400', this.value === '')"
                 >
-                  <option value="" selected>{newsletterSection.professionPlaceholder}</option>
+                  <option value="">{newsletterSection.professionPlaceholder}</option>
                   <option value="Dendrologia">Dendrologia</option>
                   <option value="Arborystyka">Arborystyka</option>
                   <option value="Inspektor nadzoru zieleni">Inspektor nadzoru zieleni</option>
-                  <option value="Architekt budowlany">Architekt budowlany</option>
-                  <option value="Konsultant">Konsultant</option>
-                  <option value="Urzędnik">Urzędnik</option>
-                  <option value="Administracja publiczna">Administracja publiczna</option>
+                  <option value="Projektant zieleni">Projektant zieleni</option>
+                  <option value="Leśnik / przyrodnik">Leśnik / przyrodnik</option>
+                  <option value="Pracownik administracji publicznej">Pracownik administracji publicznej</option>
+                  <option value="Student / nauczyciel">Student / nauczyciel</option>
                   <option value="Inne">Inne</option>
                 </select>
                 <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-stone-400" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
+
+              <label class="flex items-start gap-2.5 cursor-pointer mt-1">
+                <input
+                  type="checkbox"
+                  name="privacy"
+                  required
+                  class="mt-1 size-4 shrink-0 accent-green-600 rounded cursor-pointer"
+                />
+                <span class="text-stone-500 leading-snug" set:html={
+                  newsletterSection.privacyLabel?.replace(
+                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                    '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline text-stone-700 hover:text-stone-900 transition-colors">$1</a>'
+                  )
+                } />
+              </label>
 
               <button
                 type="submit"
