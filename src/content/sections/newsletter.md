@@ -6,6 +6,8 @@ emailPlaceholder: 'Twój email*'
 professionPlaceholder: 'Wybierz swoją profesję (opcjonalne)'
 cta: 'Zapisz się'
 note: 'Zero śmieci. Tylko rzeczy, które mają znaczenie.'
+successTitle: 'Dziękujemy!'
+successMessage: 'Twój zapis się powiódł. Sprawdź swoją skrzynkę — wkrótce dostaniesz od nas pierwszą wiadomość.'
 privacyLabel: 'Zapoznałem/am się z [polityką prywatności](/polityka-prywatnosci.pdf).'
 benefitsTitle: 'Co dostaniesz?'
 benefits:
