@@ -1,4 +1,5 @@
 ---
+sectionId: 'faq'
 title: 'FAQ'
 description: 'Najczęściej zadawane pytania o TreeAgent'
 faqItems:

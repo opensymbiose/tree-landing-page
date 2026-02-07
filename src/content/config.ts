@@ -6,8 +6,11 @@ const sectionsCollection = defineCollection({
     title: z.string().optional(),
     microcopy: z.string().optional(),
     description: z.string().optional(),
+    // Section anchor ID
+    sectionId: z.string().optional(),
     // Hero specific
     cta: z.string().optional(),
+    ctaHref: z.string().optional(),
     imageAlt: z.string().optional(),
     // For who / Problem / Upcoming items
     items: z
@@ -51,6 +54,8 @@ const sectionsCollection = defineCollection({
         })
       )
       .optional(),
+    // Newsletter profession options
+    professions: z.array(z.string()).optional(),
     // FAQ items
     faqItems: z
       .array(
@@ -71,6 +76,11 @@ const metaCollection = defineCollection({
     description: z.string(),
     ogImage: z.string(),
     keywords: z.string(),
+    logoAlt: z.string(),
+    locale: z.string(),
+    currency: z.string(),
+    menuOpenLabel: z.string(),
+    menuCloseLabel: z.string(),
     nav: z.object({
       items: z.array(
         z.object({
@@ -79,6 +89,11 @@ const metaCollection = defineCollection({
         })
       ),
       signup: z.string(),
+      signupHref: z.string(),
+    }),
+    langSwitch: z.object({
+      label: z.string(),
+      href: z.string(),
     }),
     footer: z.object({
       brand: z.string(),

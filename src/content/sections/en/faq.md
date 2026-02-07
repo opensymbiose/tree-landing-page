@@ -1,0 +1,26 @@
+---
+sectionId: 'faq'
+title: 'FAQ'
+description: 'Frequently asked questions about TreeAgent'
+faqItems:
+  - question: 'What is TreeAgent?'
+    answer: 'TreeAgent is a professional tree inspection and green space inventory application that lets you manage data, inspections, and reports in one cohesive system. The tool supports arborists and environmental specialists — from client management, through fieldwork, to ready documentation.'
+  - question: 'Who was TreeAgent designed for?'
+    answer: 'TreeAgent was created for tree care professionals — arborists, dendrologists, tree inspectors, building and landscape architects, consultants, authorities, and their staff. It is also a tool for entire organizations involved in tree management — both in the public and private sectors. It works wherever organized software for tree inventory and monitoring is needed.'
+  - question: 'Do I have to add the same tree for every inspection?'
+    answer: 'No. You add each tree to the system only once. Then you return to it for subsequent inspections, updates, or long-term monitoring. This keeps tree data consistent and inspection history preserved without duplicating information.'
+  - question: 'Can I pause an inspection and come back to it later?'
+    answer: 'Yes. Inspections in TreeAgent can be created gradually — saved in progress and returned to at any time. This is especially important in fieldwork, where tree inspections often span multiple visits.'
+  - question: 'How does project management work in TreeAgent?'
+    answer: 'Projects allow you to group trees and inspections in a single context — for example, by location, client, or contract. This makes tree inventory management clear and work organized even with large amounts of data.'
+  - question: 'Is TreeAgent suitable for fieldwork?'
+    answer: 'Absolutely. TreeAgent was designed around real fieldwork scenarios. It enables flexible data entry, partial inspection completion, and smooth continuation of work between consecutive site visits.'
+  - question: 'Can I generate reports directly from inspections?'
+    answer: 'Yes. TreeAgent automatically transforms inspection data into clear, professional tree inspection reports ready to be delivered to clients or stakeholders — without manually assembling documents.'
+  - question: 'What happens to data when I create a new inspection?'
+    answer: 'All existing tree data remains intact. A new inspection builds on previous records, so you maintain information continuity and full historical context without overwriting earlier assessments.'
+  - question: 'Is TreeAgent suitable for long-term tree monitoring?'
+    answer: 'Yes. TreeAgent was designed as a long-term tree monitoring tool, enabling tracking of changes, risks, and recommendations over time — from the first inspection through years of observation.'
+  - question: 'Do I need advanced technical knowledge to use TreeAgent?'
+    answer: "No. TreeAgent prioritizes simplicity and intuitiveness, which significantly facilitate work for professionals. The tool's interface was designed so you can focus on tree assessment and decision-making, not on learning complicated software."
+---

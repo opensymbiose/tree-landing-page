@@ -10,5 +10,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: 'https://treeagent.pro',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pl'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [alpinejs(), sitemap()],
 });

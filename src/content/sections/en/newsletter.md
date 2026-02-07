@@ -1,0 +1,30 @@
+---
+sectionId: 'newsletter'
+title: "Let's stay in touch!"
+description: 'TreeAgent as a tree inspection app grows along with them — we add new features, refine details, and improve functions that simply need to work well in the field.'
+namePlaceholder: 'Your name*'
+emailPlaceholder: 'Your email*'
+professionPlaceholder: 'Select your profession (optional)'
+cta: 'Sign up'
+note: 'Zero junk. Only things that matter.'
+successTitle: 'Thank you!'
+successMessage: 'You have been successfully subscribed. Check your inbox — you will receive your first message from us soon.'
+privacyLabel: 'I have read and agree to the [privacy policy](/polityka-prywatnosci.pdf).'
+benefitsTitle: 'What will you get?'
+benefits:
+  - text: 'Notifications about brand new features'
+    icon: 'BellRingIcon'
+  - text: 'Important fixes and changes that affect your work'
+    icon: 'BugOffIcon'
+  - text: 'Brief updates without spam or marketing epics'
+    icon: 'CircleFadingArrowUpIcon'
+professions:
+  - 'Dendrology'
+  - 'Arboriculture'
+  - 'Green space inspector'
+  - 'Landscape designer'
+  - 'Forester / naturalist'
+  - 'Public administration'
+  - 'Student / teacher'
+  - 'Other'
+---

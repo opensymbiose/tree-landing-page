@@ -1,4 +1,5 @@
 ---
+sectionId: 'dla-kogo'
 title: 'Dla kogo jest TreeAgent?'
 items:
   - title: 'Dendrolodzy, arboryści, inspektorzy drzew'

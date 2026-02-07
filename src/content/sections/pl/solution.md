@@ -1,4 +1,5 @@
 ---
+sectionId: 'funkcje'
 microcopy: 'Rozwiązanie'
 title: 'Jak TreeAgent rozwiązuje te problemy?'
 description: 'TreeAgent to nowoczesne narzędzie do inspekcji drzew, inwentaryzacji i raportowania - stworzone z myślą o realnej pracy w terenie.'

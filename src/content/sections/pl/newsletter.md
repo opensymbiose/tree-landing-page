@@ -1,4 +1,5 @@
 ---
+sectionId: 'newsletter'
 title: 'Bądźmy w kontakcie!'
 description: 'TreeAgent jako aplikacja do inspekcji drzew rośnie razem z nimi - dodajemy nowe funkcjonalności, dopracowujemy detale, poprawiamy funkcje, które w terenie muszą działać po prostu dobrze.'
 namePlaceholder: 'Twoje imię*'
@@ -17,4 +18,13 @@ benefits:
     icon: 'BugOffIcon'
   - text: 'Krótkie aktualizacje bez spamu i marketingowych epopei'
     icon: 'CircleFadingArrowUpIcon'
+professions:
+  - 'Dendrologia'
+  - 'Arborystyka'
+  - 'Inspektor nadzoru zieleni'
+  - 'Projektant zieleni'
+  - 'Leśnik / przyrodnik'
+  - 'Pracownik administracji publicznej'
+  - 'Student / nauczyciel'
+  - 'Inne'
 ---
