@@ -97,6 +97,7 @@ const metaCollection = defineCollection({
     }),
     footer: z.object({
       brand: z.string(),
+      privacyPolicy: z.string(),
     }),
   }),
 });

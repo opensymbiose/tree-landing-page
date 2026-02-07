@@ -24,4 +24,5 @@ langSwitch:
   href: '/pl'
 footer:
   brand: 'TreeAgent'
+  privacyPolicy: 'Privacy policy'
 ---
